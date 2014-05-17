@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MailSender", "MailSender\MailSender.csproj", "{5BA7F363-397D-4E63-B03D-881FEB5890D8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MandrillMailSender", "MandrillMailSender\MandrillMailSender.csproj", "{8D91D99A-440E-4744-902C-47662FE24BA5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestApp", "TestApp\TestApp.csproj", "{AF2EA52A-8365-4AFA-8870-D609F9C9074B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MailChimpMailSender", "MailChimpMailSender\MailChimpMailSender.csproj", "{4D819968-3892-4A3B-A7C3-4A24625125A1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4D819968-3892-4A3B-A7C3-4A24625125A1}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{4D819968-3892-4A3B-A7C3-4A24625125A1}.Debug|x86.Build.0 = Debug|Any CPU
+		{4D819968-3892-4A3B-A7C3-4A24625125A1}.Release|x86.ActiveCfg = Release|Any CPU
+		{4D819968-3892-4A3B-A7C3-4A24625125A1}.Release|x86.Build.0 = Release|Any CPU
+		{5BA7F363-397D-4E63-B03D-881FEB5890D8}.Debug|x86.ActiveCfg = Debug|x86
+		{5BA7F363-397D-4E63-B03D-881FEB5890D8}.Debug|x86.Build.0 = Debug|x86
+		{5BA7F363-397D-4E63-B03D-881FEB5890D8}.Release|x86.ActiveCfg = Release|x86
+		{5BA7F363-397D-4E63-B03D-881FEB5890D8}.Release|x86.Build.0 = Release|x86
+		{8D91D99A-440E-4744-902C-47662FE24BA5}.Debug|x86.ActiveCfg = Debug|x86
+		{8D91D99A-440E-4744-902C-47662FE24BA5}.Debug|x86.Build.0 = Debug|x86
+		{8D91D99A-440E-4744-902C-47662FE24BA5}.Release|x86.ActiveCfg = Release|x86
+		{8D91D99A-440E-4744-902C-47662FE24BA5}.Release|x86.Build.0 = Release|x86
+		{AF2EA52A-8365-4AFA-8870-D609F9C9074B}.Debug|x86.ActiveCfg = Debug|x86
+		{AF2EA52A-8365-4AFA-8870-D609F9C9074B}.Debug|x86.Build.0 = Debug|x86
+		{AF2EA52A-8365-4AFA-8870-D609F9C9074B}.Release|x86.ActiveCfg = Release|x86
+		{AF2EA52A-8365-4AFA-8870-D609F9C9074B}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = TestApp\TestApp.csproj
+	EndGlobalSection
+EndGlobal
