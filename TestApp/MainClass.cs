@@ -23,10 +23,11 @@ namespace TestApp
         /// <param name="args">Parametry przekazane do programu.</param>
         public static void Main(string[] args)
         {
-            ISender mandrill = new MandrillSender("test");
-            ISender mailchimp = new MailChimpSender("test");
+            ISender mandrill = new MandrillSender("");
+            ISender mailchimp = new MailChimpSender("");
             mandrill.TestSender();
-            mailchimp.TestSender();
+
+            // mailchimp.TestSender();
         }
     }
 }

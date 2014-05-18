@@ -12,12 +12,45 @@ namespace MailSender
     /// Klasa przechowująca odpowiedź otrzymaną od serwera.
     /// </summary>
     public class Response
-    {
-        /// <summary>
-        /// Inicjalizuje nową instancję klasy <see cref="MailSender.Response"/> class.
-        /// </summary>
-        public Response()
+    {   
+        #region constructors
+
+        public Response(ResponseCode code, ResponseSubCode subCode, string message)
         {
+            this.Code = code;
+            this.SubCode = subCode;
+            this.Message = message;
+        }
+
+        public Response (ResponseCode code, string message)
+            : this (code, ResponseSubCode.None, message)
+        {
+        }
+
+        #endregion
+
+        #region fields
+
+        public ResponseCode Code;
+
+        public ResponseSubCode SubCode;
+
+        public string Message;
+
+        #endregion
+
+
+
+        public enum ResponseCode
+        {
+            Ok,
+            UnknownError,
+            WrongApiKey
+        }
+
+        public enum ResponseSubCode
+        {
+            None
         }
     }
 }

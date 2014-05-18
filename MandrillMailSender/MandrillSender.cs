@@ -7,7 +7,10 @@
 namespace MandrillMailSender
 {
     using System;
+    using System.IO;
     using System.Net;
+    using System.Runtime.Serialization.Json;
+    using System.Text;
     using MailSender;
 
     /// <summary>
@@ -15,10 +18,26 @@ namespace MandrillMailSender
     /// </summary>
     public class MandrillSender : ISender
     {
+        #region fields
+
         /// <summary>
-        /// Klient używany do komunikacji http do serwera.
+        /// Adres url 
         /// </summary>
-        private HttpWebRequest httpClient;
+        private readonly string apiUrl = "https://mandrillapp.com/api/1.0";
+
+        /// <summary>
+        /// Typ danych przesyłanych do serwera.
+        /// </summary>
+        private readonly string contentType = "application/json; charset=UTF-8";
+
+        /// <summary>
+        /// Pole przechowujące klucz identyfikujący użytkownika usługi Mandrill.
+        /// </summary>
+        private readonly string apiKey;
+
+        #endregion
+
+        #region methods
 
         /// <summary>
         /// Inicjalizuje nową instancję klasy <see cref="MandrillMailSender.MandrillSender"/>.
@@ -26,6 +45,7 @@ namespace MandrillMailSender
         /// <param name="apikey">Klucz identyfikujący u żytkownika usługi Mandrill</param>
         public MandrillSender(string apikey)
         {
+            this.apiKey = apikey;
         }
 
         #region ISender implementation
@@ -36,7 +56,10 @@ namespace MandrillMailSender
         /// <returns>Odowiedź otrzymana od serwera.</returns>
         public Response TestSender()
         {
-            throw new NotImplementedException();
+            var r = new MandrillRequest();
+            r.ApiKey = this.apiKey;
+            this.SendRequest(r, "/users/ping2.json");
+            return new Response(Response.ResponseCode.Ok, "test");
         }
 
         /// <summary>
@@ -47,6 +70,42 @@ namespace MandrillMailSender
         public Response SendMail(Mail mail)
         {
             throw new NotImplementedException();
+        }
+
+        #endregion
+
+        /// <summary>
+        /// Sends the request.
+        /// </summary>
+        /// <returns>The request.</returns>
+        /// <param name="requestContent">Request content.</param>
+        /// <param name="url">URL.</param>
+        private MandrillResponse SendRequest(MandrillRequest requestContent, string url)
+        {
+            MandrillResponse response;
+            var requestSerializer = new DataContractJsonSerializer(typeof(MandrillRequest));
+            var requestMemoryStream = new MemoryStream();
+            requestSerializer.WriteObject(requestMemoryStream, requestContent);
+            var requestJson = Encoding.UTF8.GetString(requestMemoryStream.ToArray());
+            var httpRequest = WebRequest.Create(this.apiUrl + url) as HttpWebRequest;
+            httpRequest.Method = "POST";
+            httpRequest.ContentType = this.contentType;
+            using (var outpuStream = new StreamWriter(httpRequest.GetRequestStream()))
+            {
+                outpuStream.Write(requestJson);
+                outpuStream.Close();
+                var httpResponse = httpRequest.GetResponse();
+                using (var inputStream = new StreamReader(httpResponse.GetResponseStream()))
+                {
+                    var responseJson = inputStream.ReadToEnd();
+                    inputStream.Close();
+                    var responseMemoryStream = new MemoryStream(Encoding.UTF8.GetBytes(responseJson));
+                    var responseSerializer = new DataContractJsonSerializer(typeof(MandrillResponse));
+                    response = (MandrillResponse)responseSerializer.ReadObject(responseMemoryStream);
+                }
+            }
+
+            return response;
         }
 
         #endregion
