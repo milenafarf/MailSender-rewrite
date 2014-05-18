@@ -58,8 +58,12 @@ namespace MandrillMailSender
         {
             var r = new MandrillRequest();
             r.ApiKey = this.apiKey;
-            this.SendRequest(r, "/users/ping2.json");
-            return new Response(Response.ResponseCode.Ok, "test");
+            MandrillResponse response = this.SendRequest(r, "/users/ping2.json");
+            if (response.Ping.Equals ("PONG!"))
+            {
+                return new Response (Response.ResponseCode.Ok, "PONG!");
+            }
+            return new Response (Response.ResponseCode.UnknownError);
         }
 
         /// <summary>

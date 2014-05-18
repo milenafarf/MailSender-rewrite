@@ -27,6 +27,16 @@ namespace MailSender
         {
         }
 
+        public Response (ResponseCode code)
+            : this (code, ResponseSubCode.None, String.Empty)
+        {
+        }
+
+        public Response (ResponseCode code, ResponseSubCode subCode)
+            : this (code, subCode, String.Empty)
+        {
+        }
+
         #endregion
 
         #region fields
