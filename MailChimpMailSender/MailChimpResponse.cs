@@ -1,15 +1,21 @@
-﻿namespace MailChimpMailSender
+﻿// -----------------------------------------------------------------------
+//  <copyright file="MailChimpRequest.cs" company="m (m.dobrzynski@outlook.com)">
+//      Author: m (m.dobrzynski@outlook.com).
+//  </copyright>
+// -----------------------------------------------------------------------
+
+namespace MailChimpMailSender
 {
     using System;
     using System.Runtime.Serialization;
 
     public class MailChimpResponse
     {
-        [DataMember(Name = "total")]
         /// <summary>
         /// Pobiera lub ustawia liczbę kampanii spełniających kryteria zapytania.
         /// </summary>
         /// <value>Status wiadomości</value>
+        [DataMember(Name = "total")]
         public string Total { get; set; }
 
         /// <summary>
@@ -26,7 +32,4 @@
         [DataMember(Name = "text")]
         public string Text { get; set; }
     }
-
-
 }
-

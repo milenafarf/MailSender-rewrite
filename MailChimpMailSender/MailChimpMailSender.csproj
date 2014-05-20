@@ -37,6 +37,8 @@
     <Compile Include="MailChimpSender.cs" />
     <Compile Include="MailChimpRequest.cs" />
     <Compile Include="MailChimpResponse.cs" />
+    <Compile Include="MailChimpOptions.cs" />
+    <Compile Include="MailChimpContent.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

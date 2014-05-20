@@ -26,8 +26,7 @@ namespace TestApp
             ISender mandrill = new MandrillSender("", "monciwoda@outlook.com");
             ISender mailchimp = new MailChimpSender("", "monciwoda@outlook.com");
             mandrill.TestSender();
-
-            // mailchimp.TestSender();
+            mailchimp.TestSender();
         }
     }
 }

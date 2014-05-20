@@ -144,7 +144,7 @@ namespace MandrillMailSender
         /// <returns>The mail.</returns>
         /// <param name="mail">Mail.</param>
         /// <param name="recipient">Recipient.</param>
-        public Response SendMail (Mail mail, List<Receiver> recipient)
+        public Response SendMail(Mail mail, List<Receiver> recipient)
         {
             throw new NotImplementedException();
         }

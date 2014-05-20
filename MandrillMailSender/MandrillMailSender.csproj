@@ -41,6 +41,8 @@
     <Compile Include="MandrillSender.cs" />
     <Compile Include="MandrillRequest.cs" />
     <Compile Include="MandrillResponse.cs" />
+    <Compile Include="MandrillTo.cs" />
+    <Compile Include="MandrillMessage.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System.Net" />
