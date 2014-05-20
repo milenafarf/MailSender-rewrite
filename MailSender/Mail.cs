@@ -14,6 +14,15 @@ namespace MailSender
     /// </summary>
     public class Mail
     {
-        public string content{ get; set; }
-    }
+		public Mail(string content, string subject, bool html)
+		{
+			Content = content;
+			Subject = subject;
+			Html = html;
+		}
+
+		public string Content{ get; set; }
+		public string Subject{ get; set; }
+		public bool Html { get; set; }
+	}
 }

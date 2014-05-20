@@ -11,7 +11,7 @@ namespace MandrillMailSender
 {
     using System.Runtime.Serialization;
     using System.Collections.Generic;
-
+	/// komentarz
     /// <summary>
     /// Mandrill request.
     /// </summary>
@@ -28,6 +28,15 @@ namespace MandrillMailSender
     [DataContract]
     public class MandrillMessage
     {
+		MandrillMessage(Mail mail)
+		{
+			if (mail.Html)
+				this.Html = mail.Content;
+			else
+				this.Text = mail.Content;
+			this.Subject = mail.Subject;
+		}
+
         [DataMember(Name = "html", EmitDefaultValue = false)]
         public string Html { get; set; }
 
