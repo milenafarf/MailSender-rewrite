@@ -35,12 +35,18 @@ namespace MandrillMailSender
         private readonly string apiKey;
 
         /// <summary>
+        /// Pole przechowujące adres nadawcy.
+        /// </summary>
+        private readonly string fromMail;
+
+        /// <summary>
         /// Inicjalizuje nową instancję klasy <see cref="MandrillMailSender.MandrillSender"/>.
         /// </summary>
         /// <param name="apikey">Klucz identyfikujący u żytkownika usługi Mandrill</param>
-        public MandrillSender(string apikey)
+        public MandrillSender(string apikey, string frommail)
         {
             this.apiKey = apikey;
+            this.fromMail = frommail;
         }
 
         /// <summary>
@@ -65,13 +71,17 @@ namespace MandrillMailSender
         /// </summary>
         /// <returns>Odowiedź otrzymana od serwera/</returns>
         /// <param name="mail">Wiadomość którą chcemy wysłać.</param>
-        public Response SendMail(Mail mail)
+        public Response SendMail(Mail mail, Receiver receiver)
         {
             var r = new MandrillRequest();
             r.ApiKey = this.apiKey;
             r.Message = new MandrillMessage();
             r.Message.Text = mail.content;
-            r.Message.To = mail.to;
+            r.Message.To = new List<MandrillTo>();
+            MandrillTo rec = new MandrillTo ();
+            rec.Email = receiver
+            r.Message.To.Add (receiver);
+            r.Message.FromEmail = this.fromMail;
 
 
             MandrillResponse response = this.SendRequest(r, "/messages/send.json");
@@ -117,7 +127,7 @@ namespace MandrillMailSender
             return response;
         }
 
-        public Response SendMail (Mail mail, Receiver recipient)
+        public Response SendMail(Mail mail)
         {
             throw new NotImplementedException ();
         }
