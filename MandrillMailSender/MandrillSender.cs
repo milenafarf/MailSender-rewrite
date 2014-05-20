@@ -3,11 +3,11 @@
 //      Author: m (m.dobrzynski@outlook.com).
 //  </copyright>
 // -----------------------------------------------------------------------
-using System.Collections.Generic;
 
 namespace MandrillMailSender
 {
     using System;
+    using System.Collections.Generic;
     using System.IO;
     using System.Net;
     using System.Runtime.Serialization.Json;
@@ -77,12 +77,10 @@ namespace MandrillMailSender
         {
             var r = new MandrillRequest();
             r.ApiKey = this.apiKey;
-            r.Message = new MandrillMessage();
-            r.Message.Text = mail.content;
+            r.Message = new MandrillMessage(mail);
             r.Message.To = new List<MandrillTo>();
-            MandrillTo rec = new MandrillTo();
-            rec.Email = receiver;
-            r.Message.To.Add(receiver);
+            MandrillTo rec = new MandrillTo(receiver);
+            r.Message.To.Add(rec);
             r.Message.FromEmail = this.fromMail;
 
             MandrillResponse response = this.SendRequest(r, "/messages/send.json");
