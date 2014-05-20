@@ -10,7 +10,8 @@ namespace MailSender
     {
         public Receiver()
         {
-
         }
+
+        string 
     }
 }

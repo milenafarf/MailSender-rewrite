@@ -11,7 +11,7 @@ namespace MandrillMailSender
 {
     using System.Runtime.Serialization;
     using System.Collections.Generic;
-
+	/// komentarz
     /// <summary>
     /// Mandrill request.
     /// </summary>
