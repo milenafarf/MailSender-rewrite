@@ -8,13 +8,14 @@ namespace MailSender
 {
     public class Receiver
     {
-		public Receiver(string email, string name)
+        public Receiver(string email, string name)
         {
-			Email = email;
-			Name = name;
+            this.Email = email;
+            this.Name = name;
         }
 
-		public string Email { get; set;}
-		public string Name { get; set;}
+        public string Email { get; set; }
+
+        public string Name { get; set; }
     }
 }

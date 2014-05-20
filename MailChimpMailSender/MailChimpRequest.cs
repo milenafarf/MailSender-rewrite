@@ -1,10 +1,15 @@
-﻿using System;
+﻿// -----------------------------------------------------------------------
+//  <copyright file="MailChimpRequest.cs" company="m (m.dobrzynski@outlook.com)">
+//      Author: m (m.dobrzynski@outlook.com).
+//  </copyright>
+// -----------------------------------------------------------------------
 
 namespace MailChimpMailSender
 {
-    using MailSender;
+    using System;
     using System.Collections.Generic;
     using System.Runtime.Serialization;
+    using MailSender;
 
     [DataContract]
     public class MailChimpRequest
@@ -13,7 +18,7 @@ namespace MailChimpMailSender
         public string ApiKey { get; set; }
 
         /// <summary>
-        ///Pobiera lub ustawia typ kampani, jeden z "regular", "plaintext", "absplit", "rss", "auto".
+        /// Pobiera lub ustawia typ kampani, jeden z "regular", "plaintext", "absplit", "rss", "auto".
         /// </summary>
         /// <value>Typ kampani</value>
         [DataMember(Name = "type", EmitDefaultValue = false)]
@@ -25,7 +30,6 @@ namespace MailChimpMailSender
         /// <value>The options.</value>
         [DataMember(Name = "options", EmitDefaultValue = false)]
         public MailChimpOptions Options { get; set; }
-
     }
 
     /// <summary>
@@ -69,4 +73,3 @@ namespace MailChimpMailSender
         public string Text { get; set; }
     }
 }
-

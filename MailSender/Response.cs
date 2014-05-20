@@ -13,8 +13,6 @@ namespace MailSender
     /// </summary>
     public class Response
     {   
-        #region constructors
-
         public Response(ResponseCode code, ResponseSubCode subCode, string message)
         {
             this.Code = code;
@@ -22,34 +20,26 @@ namespace MailSender
             this.Message = message;
         }
 
-        public Response (ResponseCode code, string message)
-            : this (code, ResponseSubCode.None, message)
+        public Response(ResponseCode code, string message)
+            : this(code, ResponseSubCode.None, message)
         {
         }
 
-        public Response (ResponseCode code)
-            : this (code, ResponseSubCode.None, String.Empty)
+        public Response(ResponseCode code)
+            : this(code, ResponseSubCode.None, string.Empty)
         {
         }
 
-        public Response (ResponseCode code, ResponseSubCode subCode)
-            : this (code, subCode, String.Empty)
+        public Response(ResponseCode code, ResponseSubCode subCode)
+            : this(code, subCode, string.Empty)
         {
         }
-
-        #endregion
-
-        #region fields
 
         public ResponseCode Code;
 
         public ResponseSubCode SubCode;
 
         public string Message;
-
-        #endregion
-
-
 
         public enum ResponseCode
         {

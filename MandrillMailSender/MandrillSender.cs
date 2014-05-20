@@ -43,6 +43,7 @@ namespace MandrillMailSender
         /// Inicjalizuje nową instancję klasy <see cref="MandrillMailSender.MandrillSender"/>.
         /// </summary>
         /// <param name="apikey">Klucz identyfikujący u żytkownika usługi Mandrill</param>
+        /// <param name="frommail">Adres który przekazywany jest jako wysyłający wiadomość.</param>
         public MandrillSender(string apikey, string frommail)
         {
             this.apiKey = apikey;
@@ -71,6 +72,7 @@ namespace MandrillMailSender
         /// </summary>
         /// <returns>Odowiedź otrzymana od serwera/</returns>
         /// <param name="mail">Wiadomość którą chcemy wysłać.</param>
+        /// <param name="receiver">Odbiorca wiadomości do którego chcemy ją wysłać</param>
         public Response SendMail(Mail mail, Receiver receiver)
         {
             var r = new MandrillRequest();
@@ -78,9 +80,9 @@ namespace MandrillMailSender
             r.Message = new MandrillMessage();
             r.Message.Text = mail.content;
             r.Message.To = new List<MandrillTo>();
-            MandrillTo rec = new MandrillTo ();
-			rec.Email = receiver;
-            r.Message.To.Add (receiver);
+            MandrillTo rec = new MandrillTo();
+            rec.Email = receiver;
+            r.Message.To.Add(receiver);
             r.Message.FromEmail = this.fromMail;
 
             MandrillResponse response = this.SendRequest(r, "/messages/send.json");
@@ -89,6 +91,7 @@ namespace MandrillMailSender
             {
                 return new Response(Response.ResponseCode.Ok, "PONG!");
             }
+
             return new Response(Response.ResponseCode.UnknownError);
         }
 
@@ -123,27 +126,48 @@ namespace MandrillMailSender
                     response = (MandrillResponse)responseSerializer.ReadObject(responseMemoryStream);
                 }
             }
+
             return response;
         }
 
+        /// <summary>
+        /// Metoda wysyłająca wiadomość.
+        /// </summary>
+        /// <returns>Odowiedź otrzymana od serwera/</returns>
+        /// <param name="mail">Wiadomość którą chcemy wysłać.</param>
         public Response SendMail(Mail mail)
         {
-            throw new NotImplementedException ();
+            throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// Sends the mail.
+        /// </summary>
+        /// <returns>The mail.</returns>
+        /// <param name="mail">Mail.</param>
+        /// <param name="recipient">Recipient.</param>
         public Response SendMail (Mail mail, List<Receiver> recipient)
         {
-            throw new NotImplementedException ();
+            throw new NotImplementedException();
         }
 
-        public List<Receiver> GetRecpients ()
+        /// <summary>
+        /// Gets the recpients.
+        /// </summary>
+        /// <returns>The recpients.</returns>
+        public List<Receiver> GetRecpients()
         {
-            throw new NotImplementedException ();
+            throw new NotImplementedException();
         }
 
-        public bool AddReceiver (Receiver receiver)
+        /// <summary>
+        /// Adds the receiver.
+        /// </summary>
+        /// <returns><c>true</c>, if receiver was added, <c>false</c> otherwise.</returns>
+        /// <param name="receiver">Receiver.</param>
+        public bool AddReceiver(Receiver receiver)
         {
-            throw new NotImplementedException ();
+            throw new NotImplementedException();
         }
     }
 }

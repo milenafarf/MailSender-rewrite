@@ -14,7 +14,7 @@ namespace MailChimpMailSender
     /// </summary>
     public class MailChimpSender : ISender
     {
-        private readonly string apiUrl = "https://<dc>.api.mailchimp.com/2.0/";
+        private readonly string apiUrl = "https://uk1.api.mailchimp.com/2.0/";
 
         /// <summary>
         /// Typ danych przesyłanych do serwera.
@@ -36,8 +36,6 @@ namespace MailChimpMailSender
             this.apiKey = apikey;
         }
 
-        #region ISender implementation
-
         public Response TestSender()
         {
             throw new NotImplementedException();
@@ -47,7 +45,5 @@ namespace MailChimpMailSender
         {
             throw new NotImplementedException();
         }
-
-        #endregion
     }
 }

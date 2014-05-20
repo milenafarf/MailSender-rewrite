@@ -7,7 +7,8 @@
 namespace MailSender
 {
     using System;
-	using System.Collections.Generic;
+    using System.Collections.Generic;
+
     /// <summary>
     /// Interfejs definiujący metody implementowane przez klasy
     /// komunikujące się z serwisami wysyłającymi wiadomoścu email. 
@@ -17,7 +18,7 @@ namespace MailSender
         /// <summary>
         /// Metoda sprawdzająca czy połączenie z serwisem działa poprawnie.
         /// </summary>
-		/// <returns>Odowiedź otrzymana od serwera.</returns>
+        /// <returns>Odowiedź otrzymana od serwera.</returns>
         Response TestSender();
 
         /// <summary>
