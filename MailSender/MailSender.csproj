@@ -35,5 +35,6 @@
     <Compile Include="ISender.cs" />
     <Compile Include="Mail.cs" />
     <Compile Include="Response.cs" />
+    <Compile Include="Receiver.cs" />
   </ItemGroup>
 </Project>

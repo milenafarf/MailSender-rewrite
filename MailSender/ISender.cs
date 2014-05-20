@@ -3,6 +3,7 @@
 //      Author: m (m.dobrzynski@outlook.com).
 //  </copyright>
 // -----------------------------------------------------------------------
+using System.Collections.Generic;
 
 namespace MailSender
 {
@@ -26,5 +27,13 @@ namespace MailSender
         /// <returns>Odowiedź otrzymana od serwera/</returns>
         /// <param name="mail">Wiadomość którą chcemy wysłać.</param>
         Response SendMail(Mail mail);
+
+        Response SendMail(Mail mail, Receiver recipient);
+
+        Response SendMail(Mail mail, List<Receiver> recipient);
+
+        List<Receiver> GetRecpients ();
+
+        bool AddReceiver(Receiver receiver);
     }
 }

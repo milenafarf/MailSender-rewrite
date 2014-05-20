@@ -3,6 +3,7 @@
 //      Author: m (m.dobrzynski@outlook.com).
 //  </copyright>
 // -----------------------------------------------------------------------
+using System.Collections.Generic;
 
 namespace MandrillMailSender
 {
@@ -70,7 +71,7 @@ namespace MandrillMailSender
             r.ApiKey = this.apiKey;
             r.Message = new MandrillMessage();
             r.Message.Text = mail.content;
-           // r.Message.To = mail.to;
+            r.Message.To = mail.to;
 
 
             MandrillResponse response = this.SendRequest(r, "/messages/send.json");
@@ -114,6 +115,26 @@ namespace MandrillMailSender
                 }
             }
             return response;
+        }
+
+        public Response SendMail (Mail mail, Receiver recipient)
+        {
+            throw new NotImplementedException ();
+        }
+
+        public Response SendMail (Mail mail, List<Receiver> recipient)
+        {
+            throw new NotImplementedException ();
+        }
+
+        public List<Receiver> GetRecpients ()
+        {
+            throw new NotImplementedException ();
+        }
+
+        public bool AddReceiver (Receiver receiver)
+        {
+            throw new NotImplementedException ();
         }
     }
 }
