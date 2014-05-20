@@ -13,6 +13,13 @@ namespace MailChimpMailSender
         public string ApiKey { get; set; }
 
         /// <summary>
+        /// Pobiera lub ustawia id kampanii.
+        /// </summary>
+        /// <value>Id kampanii</value>
+        [DataMember(Name = "cid", EmitDefaultValue = false)]
+        public string CId { get; set; }
+
+        /// <summary>
         ///Pobiera lub ustawia typ kampani, jeden z "regular", "plaintext", "absplit", "rss", "auto".
         /// </summary>
         /// <value>Typ kampani</value>
