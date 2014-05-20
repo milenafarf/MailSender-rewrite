@@ -7,7 +7,8 @@
 namespace MandrillMailSender
 {
     using System.Runtime.Serialization;
-    //cokolwiek
+    using System.Collections.Generic;
+
     [DataContract]
     public class MandrillResponse
     {
@@ -25,5 +26,8 @@ namespace MandrillMailSender
 
         [DataMember(Name = "code")]
         public int Code { get; set; }
+
+        [DataMember(Name = "", EmitDefaultValue = false)]
+        public List<MandrillResponse> Responses { get; set; }
     }
 }

@@ -66,7 +66,20 @@ namespace MandrillMailSender
         /// <param name="mail">Wiadomość którą chcemy wysłać.</param>
         public Response SendMail(Mail mail)
         {
-            throw new NotImplementedException();
+            var r = new MandrillRequest();
+            r.ApiKey = this.apiKey;
+            r.Message = new MandrillMessage();
+            r.Message.Text = mail.content;
+           // r.Message.To = mail.to;
+
+
+            MandrillResponse response = this.SendRequest(r, "/messages/send.json");
+            
+            if (response.Ping.Equals("PONG!"))
+            {
+                return new Response(Response.ResponseCode.Ok, "PONG!");
+            }
+            return new Response(Response.ResponseCode.UnknownError);
         }
 
         /// <summary>
