@@ -28,6 +28,15 @@ namespace MandrillMailSender
     [DataContract]
     public class MandrillMessage
     {
+		MandrillMessage(Mail mail)
+		{
+			if (mail.Html)
+				this.Html = mail.Content;
+			else
+				this.Text = mail.Content;
+			this.Subject = mail.Subject;
+		}
+
         [DataMember(Name = "html", EmitDefaultValue = false)]
         public string Html { get; set; }
 
