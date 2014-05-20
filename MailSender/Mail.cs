@@ -7,13 +7,20 @@
 namespace MailSender
 {
     using System;
+    using System.Collections.Generic;
 
     /// <summary>
     /// Klasa przechowująca wiadomość email.
     /// </summary>
     public class Mail
     {
-        public string to{ get; set; }
+        public List<To> to { get; set; }
         public string content{ get; set; }
+    }
+
+    public class To
+    {
+        public string emai { get; set; }
+        public string name{ get; set; }
     }
 }

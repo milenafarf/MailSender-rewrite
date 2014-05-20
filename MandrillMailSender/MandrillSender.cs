@@ -69,6 +69,9 @@ namespace MandrillMailSender
             var r = new MandrillRequest();
             r.ApiKey = this.apiKey;
             r.Message = new MandrillMessage();
+            r.Message.Text = mail.content;
+           // r.Message.To = mail.to;
+
 
             MandrillResponse response = this.SendRequest(r, "/messages/send.json");
             
