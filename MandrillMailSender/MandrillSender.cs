@@ -18,8 +18,6 @@ namespace MandrillMailSender
     /// </summary>
     public class MandrillSender : ISender
     {
-        #region fields
-
         /// <summary>
         /// Adres url 
         /// </summary>
@@ -35,10 +33,6 @@ namespace MandrillMailSender
         /// </summary>
         private readonly string apiKey;
 
-        #endregion
-
-        #region methods
-
         /// <summary>
         /// Inicjalizuje nową instancję klasy <see cref="MandrillMailSender.MandrillSender"/>.
         /// </summary>
@@ -47,8 +41,6 @@ namespace MandrillMailSender
         {
             this.apiKey = apikey;
         }
-
-        #region ISender implementation
 
         /// <summary>
         /// Metoda sprawdzająca czy połączenie z serwisem działa poprawnie.
@@ -59,11 +51,12 @@ namespace MandrillMailSender
             var r = new MandrillRequest();
             r.ApiKey = this.apiKey;
             MandrillResponse response = this.SendRequest(r, "/users/ping2.json");
-            if (response.Ping.Equals ("PONG!"))
+            if (response.Ping.Equals("PONG!"))
             {
-                return new Response (Response.ResponseCode.Ok, "PONG!");
+                return new Response(Response.ResponseCode.Ok, "PONG!");
             }
-            return new Response (Response.ResponseCode.UnknownError);
+
+            return new Response(Response.ResponseCode.UnknownError);
         }
 
         /// <summary>
@@ -76,14 +69,13 @@ namespace MandrillMailSender
             throw new NotImplementedException();
         }
 
-        #endregion
-
         /// <summary>
-        /// Sends the request.
+        /// Wysyła zapytanie typu MandrillRequest do serwera, zwracając jego odpowiedź
+        /// w formie MandrillResponse
         /// </summary>
-        /// <returns>The request.</returns>
-        /// <param name="requestContent">Request content.</param>
-        /// <param name="url">URL.</param>
+        /// <returns>Odpowiedź otrzymana od serwera</returns>
+        /// <param name="requestContent">Zapytanie w formacie MandrillRequest</param>
+        /// <param name="url">Adres url </param>
         private MandrillResponse SendRequest(MandrillRequest requestContent, string url)
         {
             MandrillResponse response;
@@ -108,10 +100,7 @@ namespace MandrillMailSender
                     response = (MandrillResponse)responseSerializer.ReadObject(responseMemoryStream);
                 }
             }
-
             return response;
         }
-
-        #endregion
     }
 }
