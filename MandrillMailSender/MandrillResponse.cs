@@ -6,28 +6,53 @@
 
 namespace MandrillMailSender
 {
-    using System.Runtime.Serialization;
-    using System.Collections.Generic;
+	using System.Collections.Generic;
+    using System.Runtime.Serialization;    
 
     [DataContract]
     public class MandrillResponse
     {
+
         [DataMember(Name = "status")]
-        public string Status { get; set; }
+		/// <summary>
+		/// Pobiera lub ustawia status wiadomości.
+		/// </summary>
+		/// <value>Status wiadomości</value>
+		public string Status { get; set; }
 
         [DataMember(Name = "PING")]
-        public string Ping { get; set; }
+		/// <summary>
+		/// Pobiera lub ustawia ping.
+		/// </summary>
+		/// <value>Sprawdzenie połączenia</value>
+		public string Ping { get; set; }
 
         [DataMember(Name = "message")]
-        public string Messege { get; set; }
+		/// <summary>
+		/// Pobiera lub ustawia zwracaną wiadomość.
+		/// </summary>
+		/// <value>Wiadomość zwracana przez serwer</value>
+		public string Messege { get; set; }
 
         [DataMember(Name = "name")]
-        public string Name { get; set; }
+		/// <summary>
+		/// Pobiera lub ustawia nazwę zwracanego błędu.
+		/// </summary>
+		/// <value>Nazwa błędu</value>
+		public string Name { get; set; }
 
         [DataMember(Name = "code")]
-        public int Code { get; set; }
-
+		/// <summary>
+		/// Pobiera lub ustawia kod zwracanego błędu.
+		/// </summary>
+		/// <value>Kod błędu</value>
+		public int Code { get; set; }
+	
         [DataMember(Name = "", EmitDefaultValue = false)]
-        public List<MandrillResponse> Responses { get; set; }
+		/// <summary>
+		/// Pobiera lub ustawia kod zwracanego błędu.
+		/// </summary>
+		/// <value>Lista odpwiedzi z serwera dla wysłanych emaili</value>
+		public List<MandrillResponse> Responses { get; set; }
     }
 }
