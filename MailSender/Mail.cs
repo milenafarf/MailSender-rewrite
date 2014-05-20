@@ -15,10 +15,10 @@ namespace MailSender
     public class Mail
     {
 		/// <summary>
-		/// Initializes a new instance of the <see cref="MailSender.Mail"/> class.
+		/// Inicjalizuje nową instancję klasy <see cref="MailSender.Mail"/> class.
 		/// </summary>
-		/// <param name="content">Message content</param>
-		/// <param name="subject">Subject.</param>
+		/// <param name="content">Treść wiadomości</param>
+		/// <param name="subject">Temat wiadomości.</param>
 		/// <param name="html">If set to <c>true</c> html than message contains html content.</param>
 		public Mail(string content, string subject, bool html)
 		{			

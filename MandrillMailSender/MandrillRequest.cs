@@ -5,13 +5,13 @@
 //             Milena Farfu硂wska (m.farfulowska@gmail.com).
 //  </copyright>
 // -----------------------------------------------------------------------
-using MailSender;
 
 namespace MandrillMailSender
 {
+	using MailSender;
+	using System.Collections.Generic;
     using System.Runtime.Serialization;
-    using System.Collections.Generic;
-	/// komentarz
+
     /// <summary>
     /// Mandrill request.
     /// </summary>
@@ -35,6 +35,8 @@ namespace MandrillMailSender
 			else
 				this.Text = mail.Content;
 			this.Subject = mail.Subject;
+			this.FromEmail = "testmailsender4@gmail.com";
+			this.FromName = "testmailsender4@gmail.com";
 		}
 
         [DataMember(Name = "html", EmitDefaultValue = false)]
@@ -60,7 +62,11 @@ namespace MandrillMailSender
     [DataContract]
     public class MandrillTo
     {
-        MandrillTo (Receiver receiver)
+		/// <summary>
+		/// Inicjalizuje nową instancę klasy <see cref="MandrillMailSender.MandrillTo"/>.
+		/// </summary>
+		/// <param name="receiver">Odbiorca emaila..</param>
+        MandrillTo(Receiver receiver)
         {
             this.Email = receiver.Email;
             this.Name = receiver.Name;

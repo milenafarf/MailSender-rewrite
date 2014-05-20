@@ -79,10 +79,9 @@ namespace MandrillMailSender
             r.Message.Text = mail.content;
             r.Message.To = new List<MandrillTo>();
             MandrillTo rec = new MandrillTo ();
-            rec.Email = receiver
+			rec.Email = receiver;
             r.Message.To.Add (receiver);
             r.Message.FromEmail = this.fromMail;
-
 
             MandrillResponse response = this.SendRequest(r, "/messages/send.json");
             
