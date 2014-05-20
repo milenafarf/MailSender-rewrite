@@ -15,44 +15,44 @@ namespace MandrillMailSender
 
         [DataMember(Name = "status")]
 		/// <summary>
-		/// Gets or sets the status.
+		/// Pobiera lub ustawia status wiadomości.
 		/// </summary>
-		/// <value>The status.</value>
+		/// <value>Status wiadomości</value>
 		public string Status { get; set; }
 
         [DataMember(Name = "PING")]
 		/// <summary>
-		/// Gets or sets the ping.
+		/// Pobiera lub ustawia ping.
 		/// </summary>
-		/// <value>The ping.</value>
+		/// <value>Sprawdzenie połączenia</value>
 		public string Ping { get; set; }
 
         [DataMember(Name = "message")]
 		/// <summary>
-		/// Gets or sets the messege.
+		/// Pobiera lub ustawia zwracaną wiadomość.
 		/// </summary>
-		/// <value>The messege.</value>
+		/// <value>Wiadomość zwracana przez serwer</value>
 		public string Messege { get; set; }
 
         [DataMember(Name = "name")]
 		/// <summary>
-		/// Gets or sets the name.
+		/// Pobiera lub ustawia nazwę zwracanego błędu.
 		/// </summary>
-		/// <value>The name.</value>
+		/// <value>Nazwa błędu</value>
 		public string Name { get; set; }
 
         [DataMember(Name = "code")]
 		/// <summary>
-		/// Gets or sets the code.
+		/// Pobiera lub ustawia kod zwracanego błędu.
 		/// </summary>
-		/// <value>The code.</value>
+		/// <value>Kod błędu</value>
 		public int Code { get; set; }
 	
         [DataMember(Name = "", EmitDefaultValue = false)]
 		/// <summary>
-		/// Gets or sets the responses.
+		/// Pobiera lub ustawia kod zwracanego błędu.
 		/// </summary>
-		/// <value>The responses.</value>
+		/// <value>Lista odpwiedzi z serwera dla wysłanych emaili</value>
 		public List<MandrillResponse> Responses { get; set; }
     }
 }
