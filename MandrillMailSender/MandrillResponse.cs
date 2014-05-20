@@ -7,7 +7,7 @@
 namespace MandrillMailSender
 {
     using System.Runtime.Serialization;
-
+    //cokolwiek
     [DataContract]
     public class MandrillResponse
     {
