@@ -13,5 +13,7 @@ namespace MailSender
     /// </summary>
     public class Mail
     {
+        public string to{ get; set; }
+        public string content{ get; set; }
     }
 }
