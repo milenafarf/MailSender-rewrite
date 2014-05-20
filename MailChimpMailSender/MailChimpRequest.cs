@@ -18,7 +18,18 @@ namespace MailChimpMailSender
         public string ApiKey { get; set; }
 
         /// <summary>
+<<<<<<< HEAD
         /// Pobiera lub ustawia typ kampani, jeden z "regular", "plaintext", "absplit", "rss", "auto".
+=======
+        /// Pobiera lub ustawia id kampanii.
+        /// </summary>
+        /// <value>Id kampanii</value>
+        [DataMember(Name = "cid", EmitDefaultValue = false)]
+        public string CId { get; set; }
+
+        /// <summary>
+        ///Pobiera lub ustawia typ kampani, jeden z "regular", "plaintext", "absplit", "rss", "auto".
+>>>>>>> 9786bc805cb63261ab735a282d1557eac8122f54
         /// </summary>
         /// <value>Typ kampani</value>
         [DataMember(Name = "type", EmitDefaultValue = false)]
@@ -41,7 +52,7 @@ namespace MailChimpMailSender
         /// <summary>
         /// Pobiera lub ustawia id listy odbiorców kampanii.
         /// </summary>
-        /// <value>The list identifier.</value>
+        /// <value>Identyfikator listy odbiorców kampanii</value>
         [DataMember(Name = "list_id", EmitDefaultValue = false)]
         public string ListId { get; set; }
 
@@ -57,11 +68,13 @@ namespace MailChimpMailSender
         /// <summary>
         /// Pobiera lub ustawia nazwa odbiorcy (nie adres email)
         /// </summary>
-        /// <value>The name of the from.</value>
+        /// <value>Nazwa odbiorcy</value>
         [DataMember(Name = "to_name", EmitDefaultValue = false)]
         public string ToName { get; set; }
     }
 
+    /// <summary>
+    /// Zawartość kampanii
     /// </summary>
     [DataContract]
     public class MailChimpContent
