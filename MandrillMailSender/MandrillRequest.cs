@@ -30,6 +30,9 @@ namespace MandrillMailSender
         [DataMember(Name = "html", EmitDefaultValue = false)]
         public string Html { get; set; }
 
+        [DataMember(Name = "text", EmitDefaultValue = false)]
+        public string Text { get; set; }
+        
         [DataMember(Name = "subject", EmitDefaultValue = false)]
         public string Subject { get; set; }
 
