@@ -3,12 +3,11 @@
 //      Author: m (m.dobrzynski@outlook.com).
 //  </copyright>
 // -----------------------------------------------------------------------
-using System.Collections.Generic;
 
 namespace MailSender
 {
     using System;
-
+	using System.Collections.Generic;
     /// <summary>
     /// Interfejs definiujący metody implementowane przez klasy
     /// komunikujące się z serwisami wysyłającymi wiadomoścu email. 
@@ -18,7 +17,7 @@ namespace MailSender
         /// <summary>
         /// Metoda sprawdzająca czy połączenie z serwisem działa poprawnie.
         /// </summary>
-        /// <returns>Odowiedź otrzymana od serwera.</returns>
+		/// <returns>Odowiedź otrzymana od serwera.</returns>
         Response TestSender();
 
         /// <summary>
@@ -32,7 +31,7 @@ namespace MailSender
 
         Response SendMail(Mail mail, List<Receiver> recipient);
 
-        List<Receiver> GetRecpients ();
+        List<Receiver> GetRecpients();
 
         bool AddReceiver(Receiver receiver);
     }
