@@ -1,7 +1,8 @@
-﻿using System;
-
-namespace MailChimpMailSender
+﻿namespace MailChimpMailSender
 {
+    using System;
+    using System.Runtime.Serialization;
+
     public class MailChimpResponse
     {
         [DataMember(Name = "total")]

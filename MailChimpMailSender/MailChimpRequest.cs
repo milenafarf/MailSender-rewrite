@@ -18,9 +18,6 @@ namespace MailChimpMailSender
         public string ApiKey { get; set; }
 
         /// <summary>
-<<<<<<< HEAD
-        /// Pobiera lub ustawia typ kampani, jeden z "regular", "plaintext", "absplit", "rss", "auto".
-=======
         /// Pobiera lub ustawia id kampanii.
         /// </summary>
         /// <value>Id kampanii</value>
@@ -29,7 +26,6 @@ namespace MailChimpMailSender
 
         /// <summary>
         ///Pobiera lub ustawia typ kampani, jeden z "regular", "plaintext", "absplit", "rss", "auto".
->>>>>>> 9786bc805cb63261ab735a282d1557eac8122f54
         /// </summary>
         /// <value>Typ kampani</value>
         [DataMember(Name = "type", EmitDefaultValue = false)]
