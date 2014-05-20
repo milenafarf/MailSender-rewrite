@@ -5,6 +5,7 @@
 //             Milena Farfu³owska (m.farfulowska@gmail.com).
 //  </copyright>
 // -----------------------------------------------------------------------
+using MailSender;
 
 namespace MandrillMailSender
 {
@@ -50,6 +51,13 @@ namespace MandrillMailSender
     [DataContract]
     public class MandrillTo
     {
+        MandrillTo (Receiver receiver)
+        {
+            this.Email = receiver.Email;
+            this.Name = receiver.Name;
+            this.Type = "to";
+        }
+
         [DataMember(Name = "email", EmitDefaultValue = false)]
         public string Email { get; set; }
 
