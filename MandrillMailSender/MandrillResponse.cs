@@ -52,6 +52,6 @@ namespace MandrillMailSender
         /// </summary>
         /// <value>Lista odpwiedzi z serwera dla wysłanych emaili</value>
         [DataMember(Name = "", EmitDefaultValue = false)]
-        public List<MandrillResponse> Responses { get; set; }
+        public List<MandrillMailStatus> Responses { get; set; }
     }
 }

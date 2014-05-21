@@ -79,16 +79,13 @@ namespace MandrillMailSender
             r.ApiKey = this.apiKey;
             r.Message = new MandrillMessage(mail);
             r.Message.To = new List<MandrillTo>();
+            r.Message.FromEmail = fromMail;
+            r.Message.FromName = fromMail;
             MandrillTo rec = new MandrillTo(receiver);
             r.Message.To.Add(rec);
             r.Message.FromEmail = this.fromMail;
 
             MandrillResponse response = this.SendRequest(r, "/messages/send.json");
-            
-            if (response.Ping.Equals("PONG!"))
-            {
-                return new Response(Response.ResponseCode.Ok, "PONG!");
-            }
 
             return new Response(Response.ResponseCode.UnknownError);
         }

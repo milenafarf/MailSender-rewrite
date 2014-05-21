@@ -28,8 +28,6 @@ namespace MandrillMailSender
             }
 
             this.Subject = mail.Subject;
-            this.FromEmail = "testmailsender4@gmail.com";
-            this.FromName = "testmailsender4@gmail.com";
         }
 
         [DataMember(Name = "html", EmitDefaultValue = false)]
