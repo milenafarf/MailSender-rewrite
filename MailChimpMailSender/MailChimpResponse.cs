@@ -31,5 +31,40 @@ namespace MailChimpMailSender
         /// <value>The Text content used for the campaign with merge tags intact</value>
         [DataMember(Name = "text")]
         public string Text { get; set; }
+
+        /// <summary>
+        /// Pobiera lub ustawia wiadomosc zwrotną, czy udalło sie nawiazac połącznie.
+        /// </summary>
+        /// <value>The message.</value>
+        [DataMember(Name = "msg")]
+        public string Msg { get; set; }
+
+        /// <summary>
+        /// Pobiera lub ustawia status wiadomości.
+        /// </summary>
+        /// <value>Status wiadomości</value>
+        [DataMember(Name = "status")]
+        public string Status { get; set; }
+
+        /// <summary>
+        /// Pobiera lub ustawia kod zwracanego błędu.
+        /// </summary>
+        /// <value>Kod błędu</value>
+        [DataMember(Name = "code")]
+        public int Code { get; set; }
+
+        /// <summary>
+        /// Pobiera lub ustawia nazwę zwracanego błędu.
+        /// </summary>
+        /// <value>Nazwa błędu</value>
+        [DataMember(Name = "name")]
+        public string Name { get; set; }
+
+        /// <summary>
+        /// Pobiera lub ustawia zwracaną wiadomość.
+        /// </summary>
+        /// <value>Wiadomość zwracana przez serwer</value>
+        [DataMember(Name = "error")]
+        public string Error { get; set; }
     }
 }
