@@ -1,5 +1,5 @@
 // -----------------------------------------------------------------------
-//  <copyright file="ISender.cs" company="m (m.dobrzynski@outlook.com)">
+//  <copyright file="INewsletterSender.cs" company="m (m.dobrzynski@outlook.com)">
 //      Author: m (m.dobrzynski@outlook.com).
 //  </copyright>
 // -----------------------------------------------------------------------
