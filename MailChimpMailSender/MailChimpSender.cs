@@ -44,7 +44,15 @@ namespace MailChimpMailSender
         /// <returns>Odowiedź otrzymana od serwera.</returns>
         public Response TestSender()
         {
-            throw new NotImplementedException();
+            var r = new MailChimpRequest();
+            r.ApiKey = this.apiKey;
+            MailChimpResponse response = this.SendRequest(r, "/helper/ping.json");
+            if (response.Msg.Equals("Everything's Chimpy!"))
+            {
+                return new Response(Response.ResponseCode.Ok, "Everything's Chimpy!");
+            }
+
+            return new Response(Response.ResponseCode.UnknownError);
         }
 
         /// <summary>
