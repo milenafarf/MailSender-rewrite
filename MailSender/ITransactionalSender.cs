@@ -1,5 +1,5 @@
 // -----------------------------------------------------------------------
-//  <copyright file="ISender.cs" company="m (m.dobrzynski@outlook.com)">
+//  <copyright file="ITransactionalSender.cs" company="m (m.dobrzynski@outlook.com)">
 //      Author: m (m.dobrzynski@outlook.com).
 //  </copyright>
 // -----------------------------------------------------------------------
@@ -13,7 +13,7 @@ namespace MailSender
     /// Interfejs definiujący metody implementowane przez klasy
     /// komunikujące się z serwisami wysyłającymi wiadomoścu email. 
     /// </summary>
-    public interface ISender
+    public interface ITransactionalSender
     {
         /// <summary>
         /// Metoda sprawdzająca czy połączenie z serwisem działa poprawnie.
