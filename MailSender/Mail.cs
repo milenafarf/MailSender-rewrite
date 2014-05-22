@@ -15,7 +15,7 @@ namespace MailSender
     public class Mail
     {
         /// <summary>
-        /// Inicjalizuje nową instancję klasy <see cref="MailSender.Mail"/> class.
+        /// Inicjalizuje nową instancję klasy <see cref="MailSender.Mail"/>.
         /// </summary>
         /// <param name="content">Treść wiadomości</param>
         /// <param name="subject">Temat wiadomości.</param>
