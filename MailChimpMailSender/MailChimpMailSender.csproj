@@ -48,4 +48,7 @@
       <Name>MailSender</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="MailChimpMailSender.csproj" />
+  </ItemGroup>
 </Project>

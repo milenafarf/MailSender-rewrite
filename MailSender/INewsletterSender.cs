@@ -8,7 +8,7 @@ namespace MailSender
 {
     using System.Collections.Generic;
     
-    interface INewsletterSender
+    public interface INewsletterSender
     {
         string CreateReceiversList(List<Receiver> receivers);
 

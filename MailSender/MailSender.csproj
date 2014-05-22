@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
-    <ProductVersion>10.0.0</ProductVersion>
+    <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{5BA7F363-397D-4E63-B03D-881FEB5890D8}</ProjectGuid>
     <OutputType>Library</OutputType>
@@ -32,9 +32,10 @@
   </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
-    <Compile Include="ISender.cs" />
     <Compile Include="Mail.cs" />
     <Compile Include="Response.cs" />
     <Compile Include="Receiver.cs" />
+    <Compile Include="ITransactionalSender.cs" />
+    <Compile Include="INewsletterSender.cs" />
   </ItemGroup>
 </Project>

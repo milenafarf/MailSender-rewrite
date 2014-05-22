@@ -17,9 +17,9 @@ namespace MailChimpMailSender
     /// <summary>
     /// Klasa pozwalająca na komunikację z serwisem MailChimp
     /// </summary>
-    public class MailChimpSender : ISender
+    public class MailChimpSender : INewsletterSender
     {
-        private readonly string apiUrl = "https://uk1.api.mailchimp.com/2.0/";
+        private readonly string apiUrl = "https://uk1.api.mailchimp.com/2.0";
 
         /// <summary>
         /// Typ danych przesyłanych do serwera.
