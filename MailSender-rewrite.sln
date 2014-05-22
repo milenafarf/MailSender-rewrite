@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestApp", "TestApp\TestApp.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MailChimpMailSender", "MailChimpMailSender\MailChimpMailSender.csproj", "{4D819968-3892-4A3B-A7C3-4A24625125A1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MailSenderHelpers", "MailSenderHelpers\MailSenderHelpers.csproj", "{E141D65B-49E2-440F-94AD-379F6A0BD7F9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -31,6 +33,10 @@ Global
 		{AF2EA52A-8365-4AFA-8870-D609F9C9074B}.Debug|x86.Build.0 = Debug|x86
 		{AF2EA52A-8365-4AFA-8870-D609F9C9074B}.Release|x86.ActiveCfg = Release|x86
 		{AF2EA52A-8365-4AFA-8870-D609F9C9074B}.Release|x86.Build.0 = Release|x86
+		{E141D65B-49E2-440F-94AD-379F6A0BD7F9}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{E141D65B-49E2-440F-94AD-379F6A0BD7F9}.Debug|x86.Build.0 = Debug|Any CPU
+		{E141D65B-49E2-440F-94AD-379F6A0BD7F9}.Release|x86.ActiveCfg = Release|Any CPU
+		{E141D65B-49E2-440F-94AD-379F6A0BD7F9}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = TestApp\TestApp.csproj
