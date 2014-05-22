@@ -1,5 +1,5 @@
 // -----------------------------------------------------------------------
-//  <copyright file="MailChimpSender.cs" company="m (m.dobrzynski@outlook.com)">
+//  <copyright file="MailChimpSender.cs" company="DevCore.NET">
 //      Author: m (m.dobrzynski@outlook.com).
 //  </copyright>
 // -----------------------------------------------------------------------
@@ -17,7 +17,7 @@ namespace MailChimpMailSender
     /// <summary>
     /// Klasa pozwalająca na komunikację z serwisem MailChimp
     /// </summary>
-    public class MailChimpSender : INewsletterSender
+    public class MailChimpSender : ISender
     {
         private readonly string apiUrl = "https://uk1.api.mailchimp.com/2.0";
 

@@ -1,5 +1,5 @@
 // -----------------------------------------------------------------------
-//  <copyright file="Receiver.cs" company="m (m.dobrzynski@outlook.com)">
+//  <copyright file="Receiver.cs" company="DevCore.NET">
 //      Author: m (m.dobrzynski@outlook.com).
 //  </copyright>
 // -----------------------------------------------------------------------

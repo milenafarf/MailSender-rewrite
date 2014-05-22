@@ -17,7 +17,7 @@ namespace MandrillMailSender
     /// <summary>
     /// Klasa pozwalająca na komunikację z serwisem Mandrill
     /// </summary>
-    public class MandrillSender : ITransactionalSender
+    public class MandrillSender : ISender
     {
         /// <summary>
         /// Adres url 
