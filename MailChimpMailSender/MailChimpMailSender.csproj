@@ -40,6 +40,8 @@
     <Compile Include="MailChimpResponse.cs" />
     <Compile Include="MailChimpOptions.cs" />
     <Compile Include="MailChimpContent.cs" />
+    <Compile Include="MailChimpFilters.cs" />
+    <Compile Include="MailChimpEmail.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -47,5 +49,8 @@
       <Project>{5BA7F363-397D-4E63-B03D-881FEB5890D8}</Project>
       <Name>MailSender</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MailChimpMailSender.csproj" />
   </ItemGroup>
 </Project>
