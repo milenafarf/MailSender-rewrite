@@ -21,7 +21,7 @@ namespace TestApp
         /// <param name="args">Parametry przekazane do programu.</param>
         public static void Main(string[] args)
         {
-            ISender mandrill = new MandrillSender("", "");
+            ITransactionalSender mandrill = new MandrillSender("", "");
             mandrill.TestSender();
         }
     }

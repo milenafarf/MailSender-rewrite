@@ -14,7 +14,7 @@ namespace MailChimpMailSender
     /// <summary>
     /// Klasa pozwalająca na komunikację z serwisem MailChimp
     /// </summary>
-    public class MailChimpSender : ISender
+    public class MailChimpSender : INewsletterSender
     {
         private readonly string apiUrl = "https://uk1.api.mailchimp.com/2.0";
 
@@ -61,32 +61,9 @@ namespace MailChimpMailSender
         /// </summary>
         /// <returns>Odowiedź otrzymana od serwera/</returns>
         /// <param name="mail">Wiadomość którą chcemy wysłać.</param>
-        public Response SendMail(Mail mail)
-        {
-            throw new NotImplementedException();
-        }
 
-        public Response SendMail(Mail mail, Receiver recipient)
-        {
-            throw new NotImplementedException();
-        }
 
-        public Response SendMail(Mail mail, List<Receiver> recipient)
-        {
-            throw new NotImplementedException();
-        }
-
-        public List<Receiver> GetRecpients()
-        {
-            throw new NotImplementedException();
-        }
-
-        public bool AddReceiver(Receiver receiver)
-        {
-            throw new NotImplementedException();
-        }
-
-        private MailChimpResponse SendRequest(MailChimpRequest requestContent, string url)
+        public Response CreateNewReceiversList(List<Receiver> receivers)
         {
             throw new NotImplementedException();
         }
