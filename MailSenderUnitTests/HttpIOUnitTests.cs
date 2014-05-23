@@ -6,13 +6,13 @@
 
 namespace MailSenderUnitTests
 {
-    using NUnit.Framework;
     using MailSenderHelpers;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-    [TestFixture]
+    [TestClass]
     public class HttpIOUnitTests
     {
-        [Test]
+        [TestMethod]
         public void TestCase()
         {
             var connector = new HttpIO(
@@ -22,7 +22,7 @@ namespace MailSenderUnitTests
             var response = connector.ProcessRequest(
                 "post",
                 request);
-            StringAssert.Contains(request, response);
+            StringAssert.Contains(response, request);
         }
     }
 }

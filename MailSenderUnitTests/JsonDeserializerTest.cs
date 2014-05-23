@@ -7,25 +7,26 @@
 namespace MailSenderUnitTests
 {
     using MailSenderHelpers;
-    using NUnit.Framework;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
 
     /// <summary>
     /// Testy serializera obiektów do JSONa.
     /// </summary>
-    [TestFixture]
+    [TestClass]
     public class JsonDeserializerTest
     {
         /// <summary>
         /// Testuje podstawową deserializację niepełnego obiektu
         /// </summary>
-        [Test]
+        [TestMethod]
         public void TestCase()
         {
             string testJson = "{ \"text\" : \"testowy string\" }";
             var a = new JsonDeserializer<TestJsonObject>();
             TestJsonObject testObject = a.Deserialize(testJson);
-            StringAssert.AreEqualIgnoringCase(
-                "testowy string", testObject.Text);
+            StringAssert.Contains(
+                "testowy string",
+                testObject.Text);
             Assert.AreEqual(0, testObject.Number);
         }
 
@@ -33,15 +34,16 @@ namespace MailSenderUnitTests
         /// Testuje rozróźnianie małych oraz wielkich liter w nazwach pól
         /// oraz przekazywanie pól w złej kolejności wewnątrz obiektu JSON.
         /// </summary>
-        [Test]
+        [TestMethod]
         public void TestCase2()
         {
             string testJson = "{ \"NuMbEr\" : 1, \"text\" : \"testowy string\" }";
             var a = new JsonDeserializer<TestJsonObject>();
             TestJsonObject testObject = a.Deserialize(testJson);
             Assert.AreNotEqual(testObject.Number, 1);
-            StringAssert.AreEqualIgnoringCase(
-                "testowy string", testObject.Text);
+            StringAssert.Contains(
+                "testowy string",
+                testObject.Text);
         }
     }
 }

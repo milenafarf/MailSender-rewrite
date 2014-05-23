@@ -8,19 +8,18 @@ namespace MailSenderUnitTests
 {
     using System;
     using MailSenderHelpers;
-    using NUnit.Framework;
-    using NUnit.Framework.Constraints;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
 
     /// <summary>
     /// Testy serializera obiektów do JSONa.
     /// </summary>
-    [TestFixture]
+    [TestClass]
     public class JsonSerializerTest
     {
         /// <summary>
         /// Testuje podstawową serializację obiektu do JSON.
         /// </summary>
-        [Test]
+        [TestMethod]
         public void TestCase()
         {
             var testObj = new TestJsonObject();
@@ -28,24 +27,24 @@ namespace MailSenderUnitTests
             testObj.Text = "testowy string";
             var serializer = new JsonSerializer<TestJsonObject>();
             var testJson = serializer.Serialize(testObj);
-            StringAssert.IsMatch("\"text\"", testJson);
-            StringAssert.IsMatch("\"testowy string\"", testJson);
-            StringAssert.IsMatch("\"number\"", testJson);
-            StringAssert.IsMatch("1", testJson);
+            StringAssert.Contains(testJson, "\"text\"");
+            StringAssert.Contains(testJson, "\"testowy string\"");
+            StringAssert.Contains(testJson, "\"number\"");
+            StringAssert.Contains(testJson, "1");
         }
 
         /// <summary>
         /// Testuje serializacje niepełnego obiektu.
         /// </summary>
-        [Test]
+        [TestMethod]
         public void TestCase2()
         {
             var testObj = new TestJsonObject();
             testObj.Number = 1;
             var serializer = new JsonSerializer<TestJsonObject>();
             var testJson = serializer.Serialize(testObj);
-            StringAssert.IsMatch("\"number\"", testJson);
-            StringAssert.IsMatch("1", testJson);
+            StringAssert.Contains(testJson, "\"number\"");
+            StringAssert.Contains(testJson, "1");
         }
     }
 }
