@@ -1,0 +1,42 @@
+namespace MailChimpMailSender
+{
+    using System;
+    using System.Collections.Generic;
+    using System.Runtime.Serialization;
+    using MailSender;
+
+    /// <summary>
+    /// Dane o listach subskrybentów pasujących do przekazanych w zapytaniu filtrów
+    /// </summary>
+
+    [DataContract]
+    class MailChimpData
+    {
+        /// <summary>
+        /// Pobiera lub ustawia id listy subskrybentów
+        /// </summary>
+        /// <value>Identyfikator listy odbiorców kampanii</value>
+        [DataMember(Name = "id", EmitDefaultValue = false)]
+        public string Id { get; set; }
+
+        /// <summary>
+        /// Pobiera lub ustawia Id listy w plikacji MailChimp, umozliwia stworzenie linku bezośrednio do listy
+        /// </summary>
+        [DataMember(Name = "web_id", EmitDefaultValue = false)]
+        public int WebId { get; set; }
+
+        /// <summary>
+        /// Nazwa listy subskrybentów
+        /// </summary>
+        [DataMember(Name = "name", EmitDefaultValue = false)]
+        public string Name { get; set; }
+
+        /// <summary>
+        /// Pobiera lub ustawia informację o tym, czy lista wspiera rożne forrmaty,czy tylko html
+        /// </summary>
+        [DataMember(Name = "email_type_option", EmitDefaultValue = false)]
+        public string EmailTypeOption { get; set; }
+          
+
+    }
+}
