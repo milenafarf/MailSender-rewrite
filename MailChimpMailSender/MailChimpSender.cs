@@ -78,5 +78,11 @@ namespace MailChimpMailSender
             response = this.responseDeserializer.Deserialize(responseJson);
             return response;
         }
+
+
+        public Response CreateNewReceiversList(List<Receiver> receivers)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
