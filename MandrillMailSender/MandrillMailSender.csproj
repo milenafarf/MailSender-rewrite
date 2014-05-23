@@ -36,6 +36,10 @@
       <Project>{5BA7F363-397D-4E63-B03D-881FEB5890D8}</Project>
       <Name>MailSender</Name>
     </ProjectReference>
+    <ProjectReference Include="..\MailSenderHelpers\MailSenderHelpers.csproj">
+      <Project>{E141D65B-49E2-440F-94AD-379F6A0BD7F9}</Project>
+      <Name>MailSenderHelpers</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MandrillSender.cs" />
@@ -50,8 +54,5 @@
     <Reference Include="System" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="MandrillMailSender.csproj" />
   </ItemGroup>
 </Project>

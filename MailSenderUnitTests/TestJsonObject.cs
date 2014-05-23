@@ -18,4 +18,3 @@ namespace MailSenderUnitTests
         public int Number { get; set; }
     }
 }
-

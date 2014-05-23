@@ -3,6 +3,7 @@
 //      Author: m (m.dobrzynski@outlook.com).
 //  </copyright>
 // -----------------------------------------------------------------------
+using MailSenderHelpers;
 
 namespace MandrillMailSender
 {
@@ -19,6 +20,10 @@ namespace MandrillMailSender
     /// </summary>
     public class MandrillSender : ISender
     {
+        private readonly HttpIO connector;
+        private readonly JsonSerializer<MandrillRequest> requestSerializer;
+        private readonly JsonDeserializer<MandrillResponse> responseDeserializer;
+
         /// <summary>
         /// Adres url 
         /// </summary>
@@ -48,6 +53,9 @@ namespace MandrillMailSender
         {
             this.apiKey = apikey;
             this.fromMail = frommail;
+            this.connector = new HttpIO(this.apiUrl, this.contentType);
+            this.requestSerializer = new JsonSerializer<MandrillRequest>();
+            this.responseDeserializer = new JsonDeserializer<MandrillResponse>();
         }
 
         /// <summary>
@@ -59,12 +67,10 @@ namespace MandrillMailSender
             var r = new MandrillRequest();
             r.ApiKey = this.apiKey;
             MandrillResponse response = this.SendRequest(r, "/users/ping2.json");
-            if (response.Ping.Equals("PONG!"))
-            {
-                return new Response(Response.ResponseCode.Ok, "PONG!");
-            }
+            return response.Ping.Equals("PONG!") ?
+                new Response(Response.ResponseCode.Ok, "PONG!") :
+                new Response(Response.ResponseCode.UnknownError);
 
-            return new Response(Response.ResponseCode.UnknownError);
         }
 
         /// <summary>
@@ -81,48 +87,11 @@ namespace MandrillMailSender
             r.Message.To = new List<MandrillTo>();
             r.Message.FromEmail = this.fromMail;
             r.Message.FromName = this.fromMail;
-            MandrillTo rec = new MandrillTo(receiver);
+            var rec = new MandrillTo(receiver);
             r.Message.To.Add(rec);
             r.Message.FromEmail = this.fromMail;
-
             MandrillResponse response = this.SendRequest(r, "/messages/send.json");
-
             return new Response(Response.ResponseCode.UnknownError);
-        }
-
-        /// <summary>
-        /// Wysyła zapytanie typu MandrillRequest do serwera, zwracając jego odpowiedź
-        /// w formie MandrillResponse
-        /// </summary>
-        /// <returns>Odpowiedź otrzymana od serwera</returns>
-        /// <param name="requestContent">Zapytanie w formacie MandrillRequest</param>
-        /// <param name="url">Adres url </param>
-        private MandrillResponse SendRequest(MandrillRequest requestContent, string url)
-        {
-            MandrillResponse response;
-            var requestSerializer = new DataContractJsonSerializer(typeof(MandrillRequest));
-            var requestMemoryStream = new MemoryStream();
-            requestSerializer.WriteObject(requestMemoryStream, requestContent);
-            var requestJson = Encoding.UTF8.GetString(requestMemoryStream.ToArray());
-            var httpRequest = WebRequest.Create(this.apiUrl + url) as HttpWebRequest;
-            httpRequest.Method = "POST";
-            httpRequest.ContentType = this.contentType;
-            using (var outpuStream = new StreamWriter(httpRequest.GetRequestStream()))
-            {
-                outpuStream.Write(requestJson);
-                outpuStream.Close();
-                var httpResponse = httpRequest.GetResponse();
-                using (var inputStream = new StreamReader(httpResponse.GetResponseStream()))
-                {
-                    var responseJson = inputStream.ReadToEnd();
-                    inputStream.Close();
-                    var responseMemoryStream = new MemoryStream(Encoding.UTF8.GetBytes(responseJson));
-                    var responseSerializer = new DataContractJsonSerializer(typeof(MandrillResponse));
-                    response = (MandrillResponse)responseSerializer.ReadObject(responseMemoryStream);
-                }
-            }
-
-            return response;
         }
 
         /// <summary>
@@ -163,6 +132,22 @@ namespace MandrillMailSender
         public bool AddReceiver(Receiver receiver)
         {
             throw new NotImplementedException();
+        }
+
+        /// <summary>
+        /// Wysyła zapytanie typu MandrillRequest do serwera, zwracając jego odpowiedź
+        /// w formie MandrillResponse
+        /// </summary>
+        /// <returns>Odpowiedź otrzymana od serwera</returns>
+        /// <param name="requestContent">Zapytanie w formacie MandrillRequest</param>
+        /// <param name="url">Adres url </param>
+        private MandrillResponse SendRequest(MandrillRequest requestContent, string url)
+        {
+            MandrillResponse response;
+            var requestJson = this.requestSerializer.Serialize(requestContent);
+            var responseJson = this.connector.ProcessRequest(url, requestJson);
+            response = this.responseDeserializer.Deserialize(responseJson);
+            return response;
         }
     }
 }

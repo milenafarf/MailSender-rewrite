@@ -9,6 +9,7 @@ namespace MailSenderUnitTests
     using System;
     using MailSenderHelpers;
     using NUnit.Framework;
+    using NUnit.Framework.Constraints;
 
     /// <summary>
     /// Testy serializera obiektów do JSONa.
@@ -34,9 +35,7 @@ namespace MailSenderUnitTests
         }
 
         /// <summary>
-        /// Testuje serializacje niepełnego obiektu,
-        /// w wyjściowym obiekcie JSON nie powinny znaleźć się pola
-        /// z atrybutem "EmitDefaultValue = false"
+        /// Testuje serializacje niepełnego obiektu.
         /// </summary>
         [Test]
         public void TestCase2()
@@ -47,7 +46,6 @@ namespace MailSenderUnitTests
             var testJson = serializer.Serialize(testObj);
             StringAssert.IsMatch("\"number\"", testJson);
             StringAssert.IsMatch("1", testJson);
-            StringAssert.DoesNotMatch("\"text\"", testJson);
         }
     }
 }
