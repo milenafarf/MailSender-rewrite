@@ -79,8 +79,8 @@ namespace MandrillMailSender
             r.ApiKey = this.apiKey;
             r.Message = new MandrillMessage(mail);
             r.Message.To = new List<MandrillTo>();
-            r.Message.FromEmail = fromMail;
-            r.Message.FromName = fromMail;
+            r.Message.FromEmail = this.fromMail;
+            r.Message.FromName = this.fromMail;
             MandrillTo rec = new MandrillTo(receiver);
             r.Message.To.Add(rec);
             r.Message.FromEmail = this.fromMail;
