@@ -6,8 +6,6 @@
 
 namespace TestApp
 {
-    using System;
-    using MailChimpMailSender;
     using MailSender;
     using MandrillMailSender;
 

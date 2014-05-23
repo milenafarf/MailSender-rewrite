@@ -39,6 +39,7 @@
     <Compile Include="JsonSerializerTest.cs" />
     <Compile Include="TestJsonObject.cs" />
     <Compile Include="JsonDeserializerTest.cs" />
+    <Compile Include="HttpIOUnitTests.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

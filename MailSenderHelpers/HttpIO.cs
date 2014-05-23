@@ -27,6 +27,7 @@ namespace MailSenderHelpers
             var httpRequest = WebRequest.Create(this.baseUrl + url) as HttpWebRequest;
             if (httpRequest != null)
             {
+                httpRequest.Method = "POST";
                 httpRequest.ContentType = dataType;
                 using (var outpuStream = new StreamWriter(httpRequest.GetRequestStream()))
                 {
