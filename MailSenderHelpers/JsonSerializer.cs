@@ -39,7 +39,7 @@ namespace MailSenderHelpers
         {
             var mem = new MemoryStream();
             this.serializer.WriteObject(mem, obj);
-            return Encoding.UTF8.GetString(mem.ToArray);
+            return Encoding.UTF8.GetString(mem.ToArray());
         }
     }
 }

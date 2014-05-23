@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MailChimpMailSender", "Mail
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MailSenderHelpers", "MailSenderHelpers\MailSenderHelpers.csproj", "{E141D65B-49E2-440F-94AD-379F6A0BD7F9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MailSenderUnitTests", "MailSenderUnitTests\MailSenderUnitTests.csproj", "{9CC07BCF-D9A2-47A9-87B8-973D7235205A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -29,6 +31,10 @@ Global
 		{8D91D99A-440E-4744-902C-47662FE24BA5}.Debug|x86.Build.0 = Debug|x86
 		{8D91D99A-440E-4744-902C-47662FE24BA5}.Release|x86.ActiveCfg = Release|x86
 		{8D91D99A-440E-4744-902C-47662FE24BA5}.Release|x86.Build.0 = Release|x86
+		{9CC07BCF-D9A2-47A9-87B8-973D7235205A}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{9CC07BCF-D9A2-47A9-87B8-973D7235205A}.Debug|x86.Build.0 = Debug|Any CPU
+		{9CC07BCF-D9A2-47A9-87B8-973D7235205A}.Release|x86.ActiveCfg = Release|Any CPU
+		{9CC07BCF-D9A2-47A9-87B8-973D7235205A}.Release|x86.Build.0 = Release|Any CPU
 		{AF2EA52A-8365-4AFA-8870-D609F9C9074B}.Debug|x86.ActiveCfg = Debug|x86
 		{AF2EA52A-8365-4AFA-8870-D609F9C9074B}.Debug|x86.Build.0 = Debug|x86
 		{AF2EA52A-8365-4AFA-8870-D609F9C9074B}.Release|x86.ActiveCfg = Release|x86
