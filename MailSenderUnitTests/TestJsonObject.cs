@@ -11,10 +11,10 @@ namespace MailSenderUnitTests
     [DataContract]
     public class TestJsonObject
     {
-        [DataMember(Name = "text")]
+        [DataMember(Name = "text", EmitDefaultValue = false)]
         public string Text { get; set; }
 
-        [DataMember(Name = "number", EmitDefaultValue = false)]
+        [DataMember(Name = "number")]
         public int Number { get; set; }
     }
 }
