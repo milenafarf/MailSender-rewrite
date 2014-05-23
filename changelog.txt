@@ -1,0 +1,886 @@
+* commit 45642aba27b5aedb0b0c7113c7ff7bf9fb38cb23
+| Author: konto <m.dobrzynski@outlook.com>
+| Date:   Fri May 23 04:43:31 2014 +0200
+| 
+|     dodanie testow httpio
+|  
+* commit 8e3a55ccba8b058c3ccf045384a29c565106a4c1
+| Author: konto <m.dobrzynski@outlook.com>
+| Date:   Fri May 23 04:12:08 2014 +0200
+| 
+|     utworzenie helpera httpio do komunikacji z serwerem
+|  
+* commit f4270b6fda0b82cb0e0e74c486bd550929685d7f
+| Author: konto <m.dobrzynski@outlook.com>
+| Date:   Fri May 23 04:12:01 2014 +0200
+| 
+|     utworzenie helpera httpio do komunikacji z serwerem
+|  
+* commit 9995bb94cf41fe091427381d6f6075d40e7f47b5
+| Author: konto <m.dobrzynski@outlook.com>
+| Date:   Fri May 23 03:01:03 2014 +0200
+| 
+|     ulepszone testy(tzn. dzialajace)
+|  
+* commit 2d6de84a9e091cc0a51a07726ff3f0f5d22cf3bb
+| Author: konto <m.dobrzynski@outlook.com>
+| Date:   Fri May 23 02:30:44 2014 +0200
+| 
+|     dodanie opcji style copa dla unit testow
+|  
+* commit 1dc2d5aa19f4e8ce01ff8ed5edd155d6f93c01d7
+| Author: konto <m.dobrzynski@outlook.com>
+| Date:   Fri May 23 02:28:25 2014 +0200
+| 
+|     dodanie this. "dla czytelnosci" wg. style copa
+|  
+* commit fff2a41e68516bd054d45b36d2ed3d2de5e2a4cd
+| Author: konto <m.dobrzynski@outlook.com>
+| Date:   Fri May 23 02:25:29 2014 +0200
+| 
+|     zminay na poprawnych autorow
+|    
+*   commit 3e7332e98f9b91efaa6523bd2d06fe87964ee3d7
+|\  Merge: cb9134f 7c71a40
+| | Author: konto <m.dobrzynski@outlook.com>
+| | Date:   Fri May 23 02:19:28 2014 +0200
+| | 
+| |     Merge pull request #7 from milenafarf/master
+| |     
+| |     merge
+| |     
+| *   commit 7c71a402ca961130eae8bbf16d6dbc8759ca3195
+| |\  Merge: 5c3b89e 019d279
+| | | Author: milenafarf <m.farfulowska@gmail.com>
+| | | Date:   Fri May 23 01:22:46 2014 +0200
+| | | 
+| | |     * ISender.cs:
+| | |     * Receiver.cs:
+| | |     * MailSender.csproj:
+| | |     * ITransactionalSender.cs:
+| | |     * MandrillSender.cs:
+| | |     * MailChimpEmail.cs:
+| | |     * MailChimpSender.cs:
+| | |     * MailChimpFilters.cs:
+| | |     * MailChimpOptions.cs:
+| | |     * MailChimpResponse.cs:
+| | |     * MailChimpMailSender.csproj:
+| | |     
+| | |     * MailChimpContent.cs: komentarze i jsony do mailchimpa
+| | |     
+| | |     * INewsletterSender.cs: Komentarze i nowe jsony do mailchimpa
+| | |    
+| * | commit 5c3b89e1ea93f1f3b1592133945a6353ce92fda2
+| | | Author: milenafarf <m.farfulowska@gmail.com>
+| | | Date:   Thu May 22 23:43:56 2014 +0200
+| | | 
+| | |     komentarze
+| | |    
+* | | commit cb9134f334115d591a69576e3492e3c7acaa0322
+| | | Author: konto <m.dobrzynski@outlook.com>
+| | | Date:   Fri May 23 02:17:42 2014 +0200
+| | | 
+| | |     kilka testow serializera i deserializera
+| | |    
+* | | commit 0c7417a06ac7a45cdce6032fb090f418b2c78bee
+| | | Author: konto <m.dobrzynski@outlook.com>
+| | | Date:   Fri May 23 01:10:45 2014 +0200
+| | | 
+| | |     dodanie ustawien style copa dla helpera
+| | |    
+* | | commit 3ead1c354f5d8e833dbd10729fcca6018eac3700
+| | | Author: konto <m.dobrzynski@outlook.com>
+| | | Date:   Fri May 23 01:07:38 2014 +0200
+| | | 
+| | |     Skonczony JsonSerializer
+| | |    
+* | | commit 45fa0a8d8d70d258e5a74247efcf0d67b3f23a54
+| |/  Author: konto <m.dobrzynski@outlook.com>
+|/|   Date:   Fri May 23 00:33:09 2014 +0200
+| |   
+| |       Poczatek przenoszenia serializerow do odzielnych klas
+| |   
+* | commit 019d27999f4937f8efe6c3e70935aacaa75a8c21
+| | Author: konto <m.dobrzynski@outlook.com>
+| | Date:   Thu May 22 23:35:26 2014 +0200
+| | 
+| |     Revert "Create INewsletterSender.cs"
+| |     
+| |     This reverts commit 9b49b0fea76582415e5d421a78bf52027dff9610.
+| |   
+* | commit 4cc5cfc116044f9353524756cbe6c543362b13b1
+| | Author: konto <m.dobrzynski@outlook.com>
+| | Date:   Thu May 22 23:34:39 2014 +0200
+| | 
+| |     Revert "Update and rename ISender.cs to ITransactionalSender.cs"
+| |     
+| |     This reverts commit a84da52c14e9ac1f16772b529155a690be7a02e4.
+| |   
+* | commit b663b4a97135ef0bbe274e0597327035139f90ec
+| | Author: konto <m.dobrzynski@outlook.com>
+| | Date:   Thu May 22 23:34:35 2014 +0200
+| | 
+| |     Revert "Update INewsletterSender.cs"
+| |     
+| |     This reverts commit de4d08530bf62bc5d19ac2bf57c5491916fd05bd.
+| |   
+* | commit 168137f44e567edf75bfffdc31e28d9d75c7126b
+|/  Author: konto <m.dobrzynski@outlook.com>
+|   Date:   Thu May 22 23:34:25 2014 +0200
+|   
+|       Revert "Update INewsletterSender.cs"
+|       
+|       This reverts commit f93305d1ea218b06b02068e75589c81713f5af7b.
+|  
+* commit f93305d1ea218b06b02068e75589c81713f5af7b
+| Author: konto <m.dobrzynski@outlook.com>
+| Date:   Wed May 21 13:37:01 2014 +0200
+| 
+|     Update INewsletterSender.cs
+|  
+* commit de4d08530bf62bc5d19ac2bf57c5491916fd05bd
+| Author: konto <m.dobrzynski@outlook.com>
+| Date:   Wed May 21 13:23:11 2014 +0200
+| 
+|     Update INewsletterSender.cs
+|  
+* commit a84da52c14e9ac1f16772b529155a690be7a02e4
+| Author: konto <m.dobrzynski@outlook.com>
+| Date:   Wed May 21 13:22:53 2014 +0200
+| 
+|     Update and rename ISender.cs to ITransactionalSender.cs
+|  
+* commit 9b49b0fea76582415e5d421a78bf52027dff9610
+| Author: konto <m.dobrzynski@outlook.com>
+| Date:   Wed May 21 13:22:14 2014 +0200
+| 
+|     Create INewsletterSender.cs
+|  
+* commit ecd6de102cecdde864d06c6f322be9159954dd0b
+| Author: konto <m.dobrzynski@outlook.com>
+| Date:   Wed May 21 03:08:59 2014 +0200
+| 
+|     zmiany
+|    
+*   commit 9c4ca3a5f6085b06a9e05342db333d2bb337aa1d
+|\  Merge: 4067786 70a212b
+| | Author: konto <m.dobrzynski@outlook.com>
+| | Date:   Wed May 21 03:01:44 2014 +0200
+| | 
+| |     Merge pull request #6 from milenafarf/master
+| |     
+| |     * MailChimpResponse.cs: edycja response
+| |   
+| * commit 70a212b165a1be3dec36bbcff2f299d7034ec912
+|/  Author: milenafarf <m.farfulowska@gmail.com>
+|   Date:   Wed May 21 03:00:53 2014 +0200
+|   
+|       * MailChimpResponse.cs: edycja response
+|       
+|       * MailChimpSender.cs: testowanie połączenia
+|  
+* commit 40677860303b552e8a8e479185a4a1e845268bbd
+| Author: konto <m.dobrzynski@outlook.com>
+| Date:   Wed May 21 01:28:35 2014 +0200
+| 
+|     wszystko w odzielnej klasie
+|  
+* commit d16a4f4f4762f41f3d432fe684f8b05c911b687c
+| Author: konto <m.dobrzynski@outlook.com>
+| Date:   Wed May 21 01:17:35 2014 +0200
+| 
+|     teraz ok
+|    
+*   commit 716eb3e722fb5c5436215410fd9d0c99ecba0a43
+|\  Merge: ce1fd36 9786bc8
+| | Author: konto <m.dobrzynski@outlook.com>
+| | Date:   Wed May 21 01:14:46 2014 +0200
+| | 
+| |     merge
+| |   
+| * commit 9786bc805cb63261ab735a282d1557eac8122f54
+| | Author: milenafarf <m.farfulowska@gmail.com>
+| | Date:   Wed May 21 01:01:32 2014 +0200
+| | 
+| |     * MailChimpRequest.cs: komentarze
+| |     
+| |     * MailChimpResponse.cs: dodano total, html, text
+| |   
+| * commit 22d1f96d760a92664b5bc3b080b30bcba5d952b6
+| | Author: milenafarf <m.farfulowska@gmail.com>
+| | Date:   Wed May 21 00:45:13 2014 +0200
+| | 
+| |     * MailChimpResponse.cs: dod klasy MailChimpRespons
+| |     
+| |     * MailChimpMailSender.csproj:
+| |     
+| |     * MailChimpRequest.cs: Dodanie cid (id kamanii)
+| |   
+* | commit ce1fd369c5996345500a3ff4914fb75334f379bd
+| | Author: konto <m.dobrzynski@outlook.com>
+| | Date:   Wed May 21 01:06:57 2014 +0200
+| | 
+| |     naprawa kompilacji i jeszcze kilku style copow
+| |   
+* | commit 20e32659156c676451fb031081429d4a21a2b802
+| | Author: konto <m.dobrzynski@outlook.com>
+| | Date:   Wed May 21 00:50:19 2014 +0200
+| | 
+| |     Duzo style copowych porawek
+| |     
+* |   commit ada295488c96301a52408e4f15be73a73f2390ea
+|\ \  Merge: 84bf4d7 806461f
+| |/  Author: konto <m.dobrzynski@outlook.com>
+| |   Date:   Wed May 21 00:20:24 2014 +0200
+| |   
+| |       Merge pull request #4 from milenafarf/master
+| |       
+| |       MailChimpRequest i troche komentarzy
+| |   
+| * commit 806461f47305cc999ddaf85b1fdc29b4b10a107d
+| | Author: milenafarf <m.farfulowska@gmail.com>
+| | Date:   Wed May 21 00:19:10 2014 +0200
+| | 
+| |     * ISender.cs: cos tam
+| |     
+| |     * Mail.cs: cos tam jeszcze
+| |   
+| * commit 1777ba99a7e8a1fea70fcb88935de37d485ddcd4
+| | Author: milenafarf <m.farfulowska@gmail.com>
+| | Date:   Wed May 21 00:18:06 2014 +0200
+| | 
+| |     * MailChimpRequest.cs: struktura kampani
+| |     
+| |     * MailChimpMailSender.csproj: struktura kampanii
+| |     
+| |     * MailChimpSender.cs:
+| |     
+| |     * MandrillRequest.cs: dopisalam FromEmail i FromName + troche
+| |       komentarz
+| |     
+| |     * MandrillSender.cs: srednik dodany
+| |     
+* |   commit 84bf4d7d641faa36a74779a33b433e0c71b882b7
+|\ \  Merge: 2782352 3004aae
+| |/  Author: konto <m.dobrzynski@outlook.com>
+| |   Date:   Wed May 21 00:10:18 2014 +0200
+| |   
+| |       Merge pull request #3 from milenafarf/master
+| |       
+| |       spolszczeie komentarzy w klasie MandrillMailSender
+| |   
+| * commit 3004aaefef172364127b396d714e557567d7266b
+| | Author: milenafarf <m.farfulowska@gmail.com>
+| | Date:   Tue May 20 22:40:03 2014 +0200
+| | 
+| |     spolszczenie komentarzy w kalsie MandrilMailSender
+| |   
+| * commit e2855117877bd3c9f99ef1afae4c6b2c96f65b41
+| | Author: milenafarf <m.farfulowska@gmail.com>
+| | Date:   Tue May 20 19:55:34 2014 +0200
+| | 
+| |     dodano komentarze
+| |     
+* |   commit 278235287f4c2c3fdb6d289f7ddb5791eb563ce3
+|\ \  Merge: dfdd476 602047f
+| |/  Author: konto <m.dobrzynski@outlook.com>
+| |   Date:   Tue May 20 19:42:50 2014 +0200
+| |   
+| |       Merge pull request #2 from milenafarf/master
+| |       
+| |       zmiany w klasie Mail i Receiver
+| |   
+| * commit 602047f82b2492cbba5f395164e4fa6997e418f3
+| | Author: milenafarf <m.farfulowska@gmail.com>
+| | Date:   Tue May 20 19:39:45 2014 +0200
+| | 
+| |     dodanie subject to klasy Mail
+| |   
+| * commit 0211805fdc1b3ea82c948bbf3a1245429d99b9be
+| | Author: milenafarf <m.farfulowska@gmail.com>
+| | Date:   Tue May 20 19:28:56 2014 +0200
+| | 
+| |     * Mail.cs: dodanie konstruktora
+| |     
+| |     * Receiver.cs: dodanie pol i konstruktora
+| |   
+| * commit c757f560fb79a3473d4449862a420b58011ae3b6
+| | Author: milenafarf <m.farfulowska@gmail.com>
+| | Date:   Tue May 20 19:20:34 2014 +0200
+| | 
+| |     * Receiver.cs: sadasd
+| |     
+| |     * MandrillRequest.cs: cos innego
+| |     
+| *   commit ef733d8d7bfc64691caf372ba3192e22580b1e71
+| |\  Merge: ec1a116 dfdd476
+| |/  Author: milenafarf <m.farfulowska@gmail.com>
+|/|   Date:   Tue May 20 19:07:32 2014 +0200
+| |   
+| |       Merge https://github.com/konto/MailSender-rewrite into kontoo
+| |   
+* | commit dfdd4768fe20a3d1b777e5f1ae994cb645cabfd4
+| | Author: konto <m.dobrzynski@outlook.com>
+| | Date:   Tue May 20 19:05:24 2014 +0200
+| | 
+| |     dodanie parametru nazwy oraz maila nadawcy
+| |     
+| *   commit ec1a1168f3b1dce2856c7a2424e4fc62d0349860
+| |\  Merge: 75a9f6e eaa888f
+| |/  Author: milenafarf <m.farfulowska@gmail.com>
+|/|   Date:   Tue May 20 18:35:41 2014 +0200
+| |   
+| |       Merge https://github.com/konto/MailSender-rewrite into kontoo
+| |   
+* | commit eaa888fc0b940b3a8db805be552832e81358204b
+| | Author: konto <m.dobrzynski@outlook.com>
+| | Date:   Tue May 20 18:32:04 2014 +0200
+| | 
+| |     Dodnie odzielnej klasy przechowujacej adresata mailas
+| |     
+| *   commit 75a9f6ef37d9d815443e7a11ee53d5df7f736167
+| |\  Merge: 66a0643 bb41cd0
+| |/  Author: milenafarf <m.farfulowska@gmail.com>
+|/|   Date:   Tue May 20 18:29:47 2014 +0200
+| |   
+| |       Merge https://github.com/konto/MailSender-rewrite into kontoo
+| |     
+* |   commit bb41cd086cb97fd673c1bbea2cee0919a47fc92f
+|\ \  Merge: 001a51a a8e21c3
+| | | Author: konto <m.dobrzynski@outlook.com>
+| | | Date:   Tue May 20 15:48:59 2014 +0200
+| | | 
+| | |     merge
+| | |      
+| | *   commit 66a06437864a22aff408c564dee927962d1ae421
+| | |\  Merge: 92350d6 a8e21c3
+| | |/  Author: milenafarf <m.farfulowska@gmail.com>
+| |/|   Date:   Tue May 20 15:46:26 2014 +0200
+| | |   
+| | |       Merge branch 'master'
+| | |    
+| * | commit a8e21c39e060253a1e9f50ac2ff4e55e1010041c
+| | | Author: milenafarf <m.farfulowska@gmail.com>
+| | | Date:   Tue May 20 15:33:10 2014 +0200
+| | | 
+| | |     zmainy w klasie Mail
+| | |    
+| | * commit 92350d63f87b5b308e660c6ff2aab15e07449d0d
+| | | Author: milenafarf <m.farfulowska@gmail.com>
+| | | Date:   Tue May 20 15:43:35 2014 +0200
+| | | 
+| | |     merge
+| | |      
+| | *   commit db768e9b8bc7b33ea90a9c7ac3df9724e082d1be
+| | |\  Merge: c820a8d 001a51a
+| |/ /  Author: milenafarf <m.farfulowska@gmail.com>
+| | /   Date:   Tue May 20 15:43:25 2014 +0200
+| |/    
+|/|         Merge https://github.com/konto/MailSender-rewrite into kontoo
+| |         
+| |         Conflicts:
+| |         	MandrillMailSender/MandrillResponse.cs
+| |   
+* | commit 001a51a2a6eecddf7228f92dd2ec218cb3367590
+| | Author: konto <m.dobrzynski@outlook.com>
+| | Date:   Tue May 20 15:33:09 2014 +0200
+| | 
+| |     testowa zmiana do testowania
+| |     
+| *   commit c820a8dac0b3e84bc0d51bb3ec84f39e591da6ff
+| |\  Merge: b470dd8 74a6c0a
+| |/  Author: milenafarf <m.farfulowska@gmail.com>
+|/|   Date:   Tue May 20 15:24:30 2014 +0200
+| |   
+| |       Merge http://github.com/konto/MailSender-rewrite into kontoo
+| |   
+* | commit 74a6c0aa11334549350b4fc94bb69aa48d8ff20e
+| | Author: konto <m.dobrzynski@outlook.com>
+| | Date:   Tue May 20 15:22:06 2014 +0200
+| | 
+| |     * Mail.cs: podstawowe pola w klasie mail
+| |     
+| |     * MandrillSender.cs: usiniecie regionow
+| |     styl
+| |   
+| * commit b470dd8c56ceba7b79ffd8f19e68ab36e02d734b
+|/  Author: milenafarf <m.farfulowska@gmail.com>
+|   Date:   Tue May 20 15:22:53 2014 +0200
+|   
+|       request i response
+|  
+* commit b90586120f91cfa7da4e567d3e076a6542220a36
+| Author: konto <m.dobrzynski@outlook.com>
+| Date:   Sun May 18 04:26:29 2014 +0200
+| 
+|     * Response.cs: Dodano konstruktory nie przujmujące wiadomości.
+|     
+|     * MandrillSender.cs: Zwracanie odpowiedniej odpowiedzi przy testowaniu
+|       polączenia.
+|  
+* commit 0d6bb0fe5d23b5b613d0aaa224b845a1a38ef1f4
+| Author: konto <m.dobrzynski@outlook.com>
+| Date:   Sun May 18 04:17:38 2014 +0200
+| 
+|     * MandrillRequest.cs: Dodanie klasy zapytania do api dla Mandrill
+|     
+|     * MandrillResponse.cs: Dodanie klasy odpowiedzi dla Mandrill
+|     
+|     * Response.cs: Dodanie kilku możliwych kodów błędów oraz konstruktora
+|       przyjmującego te błedy jako parametr.
+|     
+|     * MandrillMailSender.csproj:
+|     
+|     * MandrillSender.cs: Wysyłanie oraz odbiór zapytania, testowanie
+|       polączenia.
+|     
+|     * MainClass.cs: Usunięcie niepotrzebnych 'testowych' kluczów api
+|  
+* commit fd052b96feb18452e8878b3a0cede3782011e96e
+  Author: konto <m.dobrzynski@outlook.com>
+  Date:   Sat May 17 23:48:17 2014 +0200
+  
+      init
+* commit 45642ab
+| Author: konto <m.dobrzynski@outlook.com>
+| Date:   Fri May 23 04:43:31 2014 +0200
+| 
+|     dodanie testow httpio
+|  
+* commit 8e3a55c
+| Author: konto <m.dobrzynski@outlook.com>
+| Date:   Fri May 23 04:12:08 2014 +0200
+| 
+|     utworzenie helpera httpio do komunikacji z serwerem
+|  
+* commit f4270b6
+| Author: konto <m.dobrzynski@outlook.com>
+| Date:   Fri May 23 04:12:01 2014 +0200
+| 
+|     utworzenie helpera httpio do komunikacji z serwerem
+|  
+* commit 9995bb9
+| Author: konto <m.dobrzynski@outlook.com>
+| Date:   Fri May 23 03:01:03 2014 +0200
+| 
+|     ulepszone testy(tzn. dzialajace)
+|  
+* commit 2d6de84
+| Author: konto <m.dobrzynski@outlook.com>
+| Date:   Fri May 23 02:30:44 2014 +0200
+| 
+|     dodanie opcji style copa dla unit testow
+|  
+* commit 1dc2d5a
+| Author: konto <m.dobrzynski@outlook.com>
+| Date:   Fri May 23 02:28:25 2014 +0200
+| 
+|     dodanie this. "dla czytelnosci" wg. style copa
+|  
+* commit fff2a41
+| Author: konto <m.dobrzynski@outlook.com>
+| Date:   Fri May 23 02:25:29 2014 +0200
+| 
+|     zminay na poprawnych autorow
+|    
+*   commit 3e7332e
+|\  Merge: cb9134f 7c71a40
+| | Author: konto <m.dobrzynski@outlook.com>
+| | Date:   Fri May 23 02:19:28 2014 +0200
+| | 
+| |     Merge pull request #7 from milenafarf/master
+| |     
+| |     merge
+| |     
+| *   commit 7c71a40
+| |\  Merge: 5c3b89e 019d279
+| | | Author: milenafarf <m.farfulowska@gmail.com>
+| | | Date:   Fri May 23 01:22:46 2014 +0200
+| | | 
+| | |     * ISender.cs:
+| | |     * Receiver.cs:
+| | |     * MailSender.csproj:
+| | |     * ITransactionalSender.cs:
+| | |     * MandrillSender.cs:
+| | |     * MailChimpEmail.cs:
+| | |     * MailChimpSender.cs:
+| | |     * MailChimpFilters.cs:
+| | |     * MailChimpOptions.cs:
+| | |     * MailChimpResponse.cs:
+| | |     * MailChimpMailSender.csproj:
+| | |     
+| | |     * MailChimpContent.cs: komentarze i jsony do mailchimpa
+| | |     
+| | |     * INewsletterSender.cs: Komentarze i nowe jsony do mailchimpa
+| | |    
+| * | commit 5c3b89e
+| | | Author: milenafarf <m.farfulowska@gmail.com>
+| | | Date:   Thu May 22 23:43:56 2014 +0200
+| | | 
+| | |     komentarze
+| | |    
+* | | commit cb9134f
+| | | Author: konto <m.dobrzynski@outlook.com>
+| | | Date:   Fri May 23 02:17:42 2014 +0200
+| | | 
+| | |     kilka testow serializera i deserializera
+| | |    
+* | | commit 0c7417a
+| | | Author: konto <m.dobrzynski@outlook.com>
+| | | Date:   Fri May 23 01:10:45 2014 +0200
+| | | 
+| | |     dodanie ustawien style copa dla helpera
+| | |    
+* | | commit 3ead1c3
+| | | Author: konto <m.dobrzynski@outlook.com>
+| | | Date:   Fri May 23 01:07:38 2014 +0200
+| | | 
+| | |     Skonczony JsonSerializer
+| | |    
+* | | commit 45fa0a8
+| |/  Author: konto <m.dobrzynski@outlook.com>
+|/|   Date:   Fri May 23 00:33:09 2014 +0200
+| |   
+| |       Poczatek przenoszenia serializerow do odzielnych klas
+| |   
+* | commit 019d279
+| | Author: konto <m.dobrzynski@outlook.com>
+| | Date:   Thu May 22 23:35:26 2014 +0200
+| | 
+| |     Revert "Create INewsletterSender.cs"
+| |     
+| |     This reverts commit 9b49b0fea76582415e5d421a78bf52027dff9610.
+| |   
+* | commit 4cc5cfc
+| | Author: konto <m.dobrzynski@outlook.com>
+| | Date:   Thu May 22 23:34:39 2014 +0200
+| | 
+| |     Revert "Update and rename ISender.cs to ITransactionalSender.cs"
+| |     
+| |     This reverts commit a84da52c14e9ac1f16772b529155a690be7a02e4.
+| |   
+* | commit b663b4a
+| | Author: konto <m.dobrzynski@outlook.com>
+| | Date:   Thu May 22 23:34:35 2014 +0200
+| | 
+| |     Revert "Update INewsletterSender.cs"
+| |     
+| |     This reverts commit de4d08530bf62bc5d19ac2bf57c5491916fd05bd.
+| |   
+* | commit 168137f
+|/  Author: konto <m.dobrzynski@outlook.com>
+|   Date:   Thu May 22 23:34:25 2014 +0200
+|   
+|       Revert "Update INewsletterSender.cs"
+|       
+|       This reverts commit f93305d1ea218b06b02068e75589c81713f5af7b.
+|  
+* commit f93305d
+| Author: konto <m.dobrzynski@outlook.com>
+| Date:   Wed May 21 13:37:01 2014 +0200
+| 
+|     Update INewsletterSender.cs
+|  
+* commit de4d085
+| Author: konto <m.dobrzynski@outlook.com>
+| Date:   Wed May 21 13:23:11 2014 +0200
+| 
+|     Update INewsletterSender.cs
+|  
+* commit a84da52
+| Author: konto <m.dobrzynski@outlook.com>
+| Date:   Wed May 21 13:22:53 2014 +0200
+| 
+|     Update and rename ISender.cs to ITransactionalSender.cs
+|  
+* commit 9b49b0f
+| Author: konto <m.dobrzynski@outlook.com>
+| Date:   Wed May 21 13:22:14 2014 +0200
+| 
+|     Create INewsletterSender.cs
+|  
+* commit ecd6de1
+| Author: konto <m.dobrzynski@outlook.com>
+| Date:   Wed May 21 03:08:59 2014 +0200
+| 
+|     zmiany
+|    
+*   commit 9c4ca3a
+|\  Merge: 4067786 70a212b
+| | Author: konto <m.dobrzynski@outlook.com>
+| | Date:   Wed May 21 03:01:44 2014 +0200
+| | 
+| |     Merge pull request #6 from milenafarf/master
+| |     
+| |     * MailChimpResponse.cs: edycja response
+| |   
+| * commit 70a212b
+|/  Author: milenafarf <m.farfulowska@gmail.com>
+|   Date:   Wed May 21 03:00:53 2014 +0200
+|   
+|       * MailChimpResponse.cs: edycja response
+|       
+|       * MailChimpSender.cs: testowanie połączenia
+|  
+* commit 4067786
+| Author: konto <m.dobrzynski@outlook.com>
+| Date:   Wed May 21 01:28:35 2014 +0200
+| 
+|     wszystko w odzielnej klasie
+|  
+* commit d16a4f4
+| Author: konto <m.dobrzynski@outlook.com>
+| Date:   Wed May 21 01:17:35 2014 +0200
+| 
+|     teraz ok
+|    
+*   commit 716eb3e
+|\  Merge: ce1fd36 9786bc8
+| | Author: konto <m.dobrzynski@outlook.com>
+| | Date:   Wed May 21 01:14:46 2014 +0200
+| | 
+| |     merge
+| |   
+| * commit 9786bc8
+| | Author: milenafarf <m.farfulowska@gmail.com>
+| | Date:   Wed May 21 01:01:32 2014 +0200
+| | 
+| |     * MailChimpRequest.cs: komentarze
+| |     
+| |     * MailChimpResponse.cs: dodano total, html, text
+| |   
+| * commit 22d1f96
+| | Author: milenafarf <m.farfulowska@gmail.com>
+| | Date:   Wed May 21 00:45:13 2014 +0200
+| | 
+| |     * MailChimpResponse.cs: dod klasy MailChimpRespons
+| |     
+| |     * MailChimpMailSender.csproj:
+| |     
+| |     * MailChimpRequest.cs: Dodanie cid (id kamanii)
+| |   
+* | commit ce1fd36
+| | Author: konto <m.dobrzynski@outlook.com>
+| | Date:   Wed May 21 01:06:57 2014 +0200
+| | 
+| |     naprawa kompilacji i jeszcze kilku style copow
+| |   
+* | commit 20e3265
+| | Author: konto <m.dobrzynski@outlook.com>
+| | Date:   Wed May 21 00:50:19 2014 +0200
+| | 
+| |     Duzo style copowych porawek
+| |     
+* |   commit ada2954
+|\ \  Merge: 84bf4d7 806461f
+| |/  Author: konto <m.dobrzynski@outlook.com>
+| |   Date:   Wed May 21 00:20:24 2014 +0200
+| |   
+| |       Merge pull request #4 from milenafarf/master
+| |       
+| |       MailChimpRequest i troche komentarzy
+| |   
+| * commit 806461f
+| | Author: milenafarf <m.farfulowska@gmail.com>
+| | Date:   Wed May 21 00:19:10 2014 +0200
+| | 
+| |     * ISender.cs: cos tam
+| |     
+| |     * Mail.cs: cos tam jeszcze
+| |   
+| * commit 1777ba9
+| | Author: milenafarf <m.farfulowska@gmail.com>
+| | Date:   Wed May 21 00:18:06 2014 +0200
+| | 
+| |     * MailChimpRequest.cs: struktura kampani
+| |     
+| |     * MailChimpMailSender.csproj: struktura kampanii
+| |     
+| |     * MailChimpSender.cs:
+| |     
+| |     * MandrillRequest.cs: dopisalam FromEmail i FromName + troche
+| |       komentarz
+| |     
+| |     * MandrillSender.cs: srednik dodany
+| |     
+* |   commit 84bf4d7
+|\ \  Merge: 2782352 3004aae
+| |/  Author: konto <m.dobrzynski@outlook.com>
+| |   Date:   Wed May 21 00:10:18 2014 +0200
+| |   
+| |       Merge pull request #3 from milenafarf/master
+| |       
+| |       spolszczeie komentarzy w klasie MandrillMailSender
+| |   
+| * commit 3004aae
+| | Author: milenafarf <m.farfulowska@gmail.com>
+| | Date:   Tue May 20 22:40:03 2014 +0200
+| | 
+| |     spolszczenie komentarzy w kalsie MandrilMailSender
+| |   
+| * commit e285511
+| | Author: milenafarf <m.farfulowska@gmail.com>
+| | Date:   Tue May 20 19:55:34 2014 +0200
+| | 
+| |     dodano komentarze
+| |     
+* |   commit 2782352
+|\ \  Merge: dfdd476 602047f
+| |/  Author: konto <m.dobrzynski@outlook.com>
+| |   Date:   Tue May 20 19:42:50 2014 +0200
+| |   
+| |       Merge pull request #2 from milenafarf/master
+| |       
+| |       zmiany w klasie Mail i Receiver
+| |   
+| * commit 602047f
+| | Author: milenafarf <m.farfulowska@gmail.com>
+| | Date:   Tue May 20 19:39:45 2014 +0200
+| | 
+| |     dodanie subject to klasy Mail
+| |   
+| * commit 0211805
+| | Author: milenafarf <m.farfulowska@gmail.com>
+| | Date:   Tue May 20 19:28:56 2014 +0200
+| | 
+| |     * Mail.cs: dodanie konstruktora
+| |     
+| |     * Receiver.cs: dodanie pol i konstruktora
+| |   
+| * commit c757f56
+| | Author: milenafarf <m.farfulowska@gmail.com>
+| | Date:   Tue May 20 19:20:34 2014 +0200
+| | 
+| |     * Receiver.cs: sadasd
+| |     
+| |     * MandrillRequest.cs: cos innego
+| |     
+| *   commit ef733d8
+| |\  Merge: ec1a116 dfdd476
+| |/  Author: milenafarf <m.farfulowska@gmail.com>
+|/|   Date:   Tue May 20 19:07:32 2014 +0200
+| |   
+| |       Merge https://github.com/konto/MailSender-rewrite into kontoo
+| |   
+* | commit dfdd476
+| | Author: konto <m.dobrzynski@outlook.com>
+| | Date:   Tue May 20 19:05:24 2014 +0200
+| | 
+| |     dodanie parametru nazwy oraz maila nadawcy
+| |     
+| *   commit ec1a116
+| |\  Merge: 75a9f6e eaa888f
+| |/  Author: milenafarf <m.farfulowska@gmail.com>
+|/|   Date:   Tue May 20 18:35:41 2014 +0200
+| |   
+| |       Merge https://github.com/konto/MailSender-rewrite into kontoo
+| |   
+* | commit eaa888f
+| | Author: konto <m.dobrzynski@outlook.com>
+| | Date:   Tue May 20 18:32:04 2014 +0200
+| | 
+| |     Dodnie odzielnej klasy przechowujacej adresata mailas
+| |     
+| *   commit 75a9f6e
+| |\  Merge: 66a0643 bb41cd0
+| |/  Author: milenafarf <m.farfulowska@gmail.com>
+|/|   Date:   Tue May 20 18:29:47 2014 +0200
+| |   
+| |       Merge https://github.com/konto/MailSender-rewrite into kontoo
+| |     
+* |   commit bb41cd0
+|\ \  Merge: 001a51a a8e21c3
+| | | Author: konto <m.dobrzynski@outlook.com>
+| | | Date:   Tue May 20 15:48:59 2014 +0200
+| | | 
+| | |     merge
+| | |      
+| | *   commit 66a0643
+| | |\  Merge: 92350d6 a8e21c3
+| | |/  Author: milenafarf <m.farfulowska@gmail.com>
+| |/|   Date:   Tue May 20 15:46:26 2014 +0200
+| | |   
+| | |       Merge branch 'master'
+| | |    
+| * | commit a8e21c3
+| | | Author: milenafarf <m.farfulowska@gmail.com>
+| | | Date:   Tue May 20 15:33:10 2014 +0200
+| | | 
+| | |     zmainy w klasie Mail
+| | |    
+| | * commit 92350d6
+| | | Author: milenafarf <m.farfulowska@gmail.com>
+| | | Date:   Tue May 20 15:43:35 2014 +0200
+| | | 
+| | |     merge
+| | |      
+| | *   commit db768e9
+| | |\  Merge: c820a8d 001a51a
+| |/ /  Author: milenafarf <m.farfulowska@gmail.com>
+| | /   Date:   Tue May 20 15:43:25 2014 +0200
+| |/    
+|/|         Merge https://github.com/konto/MailSender-rewrite into kontoo
+| |         
+| |         Conflicts:
+| |         	MandrillMailSender/MandrillResponse.cs
+| |   
+* | commit 001a51a
+| | Author: konto <m.dobrzynski@outlook.com>
+| | Date:   Tue May 20 15:33:09 2014 +0200
+| | 
+| |     testowa zmiana do testowania
+| |     
+| *   commit c820a8d
+| |\  Merge: b470dd8 74a6c0a
+| |/  Author: milenafarf <m.farfulowska@gmail.com>
+|/|   Date:   Tue May 20 15:24:30 2014 +0200
+| |   
+| |       Merge http://github.com/konto/MailSender-rewrite into kontoo
+| |   
+* | commit 74a6c0a
+| | Author: konto <m.dobrzynski@outlook.com>
+| | Date:   Tue May 20 15:22:06 2014 +0200
+| | 
+| |     * Mail.cs: podstawowe pola w klasie mail
+| |     
+| |     * MandrillSender.cs: usiniecie regionow
+| |     styl
+| |   
+| * commit b470dd8
+|/  Author: milenafarf <m.farfulowska@gmail.com>
+|   Date:   Tue May 20 15:22:53 2014 +0200
+|   
+|       request i response
+|  
+* commit b905861
+| Author: konto <m.dobrzynski@outlook.com>
+| Date:   Sun May 18 04:26:29 2014 +0200
+| 
+|     * Response.cs: Dodano konstruktory nie przujmujące wiadomości.
+|     
+|     * MandrillSender.cs: Zwracanie odpowiedniej odpowiedzi przy testowaniu
+|       polączenia.
+|  
+* commit 0d6bb0f
+| Author: konto <m.dobrzynski@outlook.com>
+| Date:   Sun May 18 04:17:38 2014 +0200
+| 
+|     * MandrillRequest.cs: Dodanie klasy zapytania do api dla Mandrill
+|     
+|     * MandrillResponse.cs: Dodanie klasy odpowiedzi dla Mandrill
+|     
+|     * Response.cs: Dodanie kilku możliwych kodów błędów oraz konstruktora
+|       przyjmującego te błedy jako parametr.
+|     
+|     * MandrillMailSender.csproj:
+|     
+|     * MandrillSender.cs: Wysyłanie oraz odbiór zapytania, testowanie
+|       polączenia.
+|     
+|     * MainClass.cs: Usunięcie niepotrzebnych 'testowych' kluczów api
+|  
+* commit fd052b9
+  Author: konto <m.dobrzynski@outlook.com>
+  Date:   Sat May 17 23:48:17 2014 +0200
+  
+      init
