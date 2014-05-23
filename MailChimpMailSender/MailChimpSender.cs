@@ -10,12 +10,17 @@ namespace MailChimpMailSender
     using System.Collections.Generic;
     using System.Runtime.Serialization.Json;
     using MailSender;
+    using MailSenderHelpers;
 
     /// <summary>
     /// Klasa pozwalająca na komunikację z serwisem MailChimp
     /// </summary>
     public class MailChimpSender : INewsletterSender
     {
+        private readonly HttpIO connector;
+        private readonly JsonSerializer<MailChimpRequest> requestSerializer;
+        private readonly JsonDeserializer<MailChimpResponse> responseDeserializer;
+
         private readonly string apiUrl = "https://uk1.api.mailchimp.com/2.0";
 
         /// <summary>
@@ -37,6 +42,8 @@ namespace MailChimpMailSender
         {
             this.apiKey = apikey;
             this.fromMail = frommail;
+            this.requestSerializer = new JsonSerializer<MailChimpRequest>();
+            this.responseDeserializer = new JsonDeserializer<MailChimpResponse>();
         }
 
         /// <summary>
@@ -57,15 +64,19 @@ namespace MailChimpMailSender
         }
 
         /// <summary>
-        /// Metoda wysyłająca wiadomość.
+        /// Wysyła zapytanie typu MailChimpRequest do serwera, zwracając jego odpowiedź
+        /// w formie MailChimpResponse
         /// </summary>
-        /// <returns>Odowiedź otrzymana od serwera/</returns>
-        /// <param name="mail">Wiadomość którą chcemy wysłać.</param>
-
-
-        public Response CreateNewReceiversList(List<Receiver> receivers)
+        /// <returns>Odpowiedź otrzymana od serwera</returns>
+        /// <param name="requestContent">Zapytanie w formacie MailChimpRequest</param>
+        /// <param name="url">Adres url </param>
+        private MailChimpResponse SendRequest(MailChimpRequest requestContent, string url)
         {
-            throw new NotImplementedException();
+            MailChimpResponse response;
+            var requestJson = this.requestSerializer.Serialize(requestContent);
+            var responseJson = this.connector.ProcessRequest(url, requestJson);
+            response = this.responseDeserializer.Deserialize(responseJson);
+            return response;
         }
     }
 }

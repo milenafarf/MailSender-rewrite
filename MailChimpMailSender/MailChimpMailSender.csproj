@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -45,6 +45,10 @@
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
+    <ProjectReference Include="..\MailSenderHelpers\MailSenderHelpers.csproj">
+      <Project>{e141d65b-49e2-440f-94ad-379f6a0bd7f9}</Project>
+      <Name>MailSenderHelpers</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MailSender\MailSender.csproj">
       <Project>{5BA7F363-397D-4E63-B03D-881FEB5890D8}</Project>
       <Name>MailSender</Name>
