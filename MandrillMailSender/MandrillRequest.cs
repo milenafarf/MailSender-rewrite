@@ -1,5 +1,5 @@
 // -----------------------------------------------------------------------
-//  <copyright file="MandrillMailSender.cs" company="m (m.dobrzynski@outlook.com)">
+//  <copyright file="MandrillMailSender.cs" company="DevCore.NET">
 //      Author: m (m.dobrzynski@outlook.com).
 //  </copyright>
 // -----------------------------------------------------------------------

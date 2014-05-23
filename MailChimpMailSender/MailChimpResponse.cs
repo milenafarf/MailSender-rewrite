@@ -1,6 +1,6 @@
 ﻿// -----------------------------------------------------------------------
 //  <copyright file="MailChimpRequest.cs" company="DevCore.NET">
-//      Author: m (m.dobrzynski@outlook.com).
+//      Author: Milena Farfułowska (m.farfulowskai@gmail.com).
 //  </copyright>
 // -----------------------------------------------------------------------
 

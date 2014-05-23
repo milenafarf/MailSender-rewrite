@@ -1,5 +1,5 @@
 // -----------------------------------------------------------------------
-//  <copyright file="MainClass.cs" company="m (m.dobrzynski@outlook.com)">
+//  <copyright file="MainClass.cs" company="DevCore.NET">
 //      Author: m (m.dobrzynski@outlook.com).
 //  </copyright>
 // -----------------------------------------------------------------------

@@ -1,5 +1,5 @@
 // -----------------------------------------------------------------------
-//  <copyright file="JsonDeserializer.cs" company="m (m.dobrzynski@outlook.com)">
+//  <copyright file="JsonDeserializer.cs" company="DevCore.NET">
 //      Author: m (m.dobrzynski@outlook.com).
 //  </copyright>
 // -----------------------------------------------------------------------

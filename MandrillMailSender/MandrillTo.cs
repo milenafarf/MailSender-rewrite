@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
-//  <copyright file="MandrillTo.cs" company="m (m.dobrzynski@outlook.com)">
-//      Author: m (m.dobrzynski@outlook.com).
+//  <copyright file="MandrillTo.cs" company="DevCore.NET">
+//      Author: Milena Farfułowska (m.farfulowskai@gmail.com).
 //  </copyright>
 // -----------------------------------------------------------------------
 

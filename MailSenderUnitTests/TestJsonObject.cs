@@ -1,5 +1,5 @@
 // -----------------------------------------------------------------------
-//  <copyright file="TestJsonObject.cs" company="m (m.dobrzynski@outlook.com)">
+//  <copyright file="TestJsonObject.cs" company="DevCore.NET">
 //      Author: m (m.dobrzynski@outlook.com).
 //  </copyright>
 // -----------------------------------------------------------------------
