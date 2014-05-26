@@ -8,6 +8,7 @@ namespace MailChimpMailSender
 {
     using System;
     using System.Runtime.Serialization;
+    using System.Collections.Generic;
 
     public class MailChimpResponse
     {
@@ -33,7 +34,7 @@ namespace MailChimpMailSender
         public string Text { get; set; }
 
         /// <summary>
-        /// Pobiera lub ustawia wiadomosc zwrotną, czy udalło sie nawiazac połącznie.
+        /// Pobiera lub ustawia wiadomosc zwrotną, czy udało sie nawiazac połącznie.
         /// </summary>
         /// <value>The message.</value>
         [DataMember(Name = "msg")]

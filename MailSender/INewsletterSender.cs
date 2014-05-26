@@ -14,5 +14,7 @@ namespace MailSender
         Response TestSender();
 
         Response CreateNewReceiversList(List<Receiver> receivers);
+
+        Response GetReceiversList(string name);
     }
 }

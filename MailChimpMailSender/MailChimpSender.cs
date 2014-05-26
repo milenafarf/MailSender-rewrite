@@ -54,17 +54,17 @@ namespace MailChimpMailSender
         {
             var r = new MailChimpRequest();
             r.ApiKey = this.apiKey;
-            MailChimpResponse response = this.SendRequest(r, "/helper/ping.json");
-            if (response.Msg.Equals("Everything's Chimpy!"))
-            {
-                return new Response(Response.ResponseCode.Ok, "Everything's Chimpy!");
-            }
-
-            return new Response(Response.ResponseCode.UnknownError);
+            MandrillResponse response = this.SendRequest(r, "/helper/ping.json");
+            return response.Msg.Equals("Everything's Chimpy!") ?
+                new Response(Response.ResponseCode.Ok, "Everything's Chimpy!") :
+                new Response(Response.ResponseCode.UnknownError);
         }
 
         /// <summary>
-        /// Wysyła zapytanie typu MailChimpRequest do serwera, zwracając jego odpowiedź
+        /// Wysyła zapytanie typu MailChimp
+        /// 
+        /// 
+        /// uest do serwera, zwracając jego odpowiedź
         /// w formie MailChimpResponse
         /// </summary>
         /// <returns>Odpowiedź otrzymana od serwera</returns>
@@ -79,10 +79,19 @@ namespace MailChimpMailSender
             return response;
         }
 
-
         public Response CreateNewReceiversList(List<Receiver> receivers)
         {
             throw new NotImplementedException();
+        }
+
+        public Response GetReceiversList(string name)
+        {
+            var r = new MailChimpRequest();
+            r.ApiKey = this.apiKey;
+            r.Filters = new MailChimpFilters();
+            r.Filters.ListName = name;
+            MandrillResponse response = this.SendRequest(r, "/lists/list.json");
+            return new Response(Response.ResponseCode.UnknownError);
         }
     }
 }
