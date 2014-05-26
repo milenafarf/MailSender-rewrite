@@ -42,18 +42,18 @@ namespace MailChimpMailSender
         /// Pobiera lub ustawia treść kampanii
         /// </summary>
         [DataMember(Name = "content", EmitDefaultValue = false)]
-        public MailChimpOptions Content { get; set; }
+        public MailChimpContent Content { get; set; }
         
         /// <summary>
         /// Pobiera lub ustawia adres email subskrybenta
         /// </summary>
         [DataMember(Name = "email", EmitDefaultValue = false)]
-        public MailChimpOptions Email { get; set; }
+        public MailChimpEmail Email { get; set; }
         
          /// <summary>
         /// Pobiera lub ustawia filtry do uzyskania list subskrybentów 
         /// </summary>
         [DataMember(Name = "filters", EmitDefaultValue = false)]
-        public MailChimpOptions Filters { get; set; }
+        public MailChimpFilters Filters { get; set; }
     }
 }

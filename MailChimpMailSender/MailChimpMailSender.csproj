@@ -42,11 +42,12 @@
     <Compile Include="MailChimpContent.cs" />
     <Compile Include="MailChimpFilters.cs" />
     <Compile Include="MailChimpEmail.cs" />
+    <Compile Include="MailChimpData.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
     <ProjectReference Include="..\MailSenderHelpers\MailSenderHelpers.csproj">
-      <Project>{e141d65b-49e2-440f-94ad-379f6a0bd7f9}</Project>
+      <Project>{E141D65B-49E2-440F-94AD-379F6A0BD7F9}</Project>
       <Name>MailSenderHelpers</Name>
     </ProjectReference>
     <ProjectReference Include="..\MailSender\MailSender.csproj">

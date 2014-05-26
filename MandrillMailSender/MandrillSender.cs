@@ -47,7 +47,7 @@ namespace MandrillMailSender
         /// <summary>
         /// Inicjalizuje nową instancję klasy <see cref="MandrillMailSender.MandrillSender"/>.
         /// </summary>
-        /// <param name="apikey">Klucz identyfikujący u żytkownika usługi Mandrill</param>
+        /// <param name="apikey">Klucz identyfikujący u żytkownika usługi Mandrill<est/param>
         /// <param name="frommail">Adres który przekazywany jest jako wysyłający wiadomość.</param>
         public MandrillSender(string apikey, string frommail)
         {
