@@ -50,7 +50,7 @@ namespace MailSender
         /// <summary>
         /// Pobiera lub ustawia id listy subskrybentow
         /// </summary>
-        public string id { get; set; }
+        public string Id { get; set; }
 
         public enum ResponseCode
         {

@@ -101,15 +101,16 @@ namespace MailChimpMailSender
             r.Filters = new MailChimpFilters();
             r.Filters.ListName = name;
             MailChimpResponse response = this.SendRequest(r, "/lists/list.json");
-            
-            return new Response(Response.ResponseCode.UnknownError);
+            var res = new Response(Response.ResponseCode.UnknownError);
+            res.Id = response.Data[0].Id;
+            return res;
         }
 
         public Response AddReciver(Receiver receiver, string list_name)
         {
             var r = new MailChimpRequest();
             r.ApiKey = this.apiKey;
-            r.Id = GetReceiversList(list_name).id;
+            r.Id = GetReceiversList(list_name).Id;
             r.Email.Email = receiver.Email;
             MailChimpResponse response = this.SendRequest(r, "/lists/subscribe.json");
             return new Response(Response.ResponseCode.UnknownError);
