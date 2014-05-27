@@ -10,6 +10,7 @@ namespace MailChimpMailSender
     using System.Runtime.Serialization;
     using System.Collections.Generic;
 
+    [DataContract]
     public class MailChimpResponse
     {
         /// <summary>
