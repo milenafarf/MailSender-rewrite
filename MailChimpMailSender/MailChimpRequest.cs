@@ -55,5 +55,11 @@ namespace MailChimpMailSender
         /// </summary>
         [DataMember(Name = "filters", EmitDefaultValue = false)]
         public MailChimpFilters Filters { get; set; }
+
+        /// <summary>
+        /// Pobiera lub ustawia id listy subskrybentów 
+        /// </summary>
+        [DataMember(Name = "id", EmitDefaultValue = false)]
+        public MailChimpFilters Id { get; set; }
     }
 }

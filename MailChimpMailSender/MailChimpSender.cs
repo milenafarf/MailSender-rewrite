@@ -54,7 +54,7 @@ namespace MailChimpMailSender
         {
             var r = new MailChimpRequest();
             r.ApiKey = this.apiKey;
-            MandrillResponse response = this.SendRequest(r, "/helper/ping.json");
+            MailChimpResponse response = this.SendRequest(r, "/helper/ping.json");
             return response.Msg.Equals("Everything's Chimpy!") ?
                 new Response(Response.ResponseCode.Ok, "Everything's Chimpy!") :
                 new Response(Response.ResponseCode.UnknownError);
@@ -90,7 +90,17 @@ namespace MailChimpMailSender
             r.ApiKey = this.apiKey;
             r.Filters = new MailChimpFilters();
             r.Filters.ListName = name;
-            MandrillResponse response = this.SendRequest(r, "/lists/list.json");
+            MailChimpResponse response = this.SendRequest(r, "/lists/list.json");
+            return new Response(Response.ResponseCode.UnknownError);
+        }
+
+        public Response AddReciver(Receiver receiver, string list_name)
+        {
+            var r = new MailChimpRequest();
+            r.ApiKey = this.apiKey;
+            //r.Id = uzyskac z GetReceiversList(list_name)
+            r.Email.Email = receiver.Email;
+            MailChimpResponse response = this.SendRequest(r, "/lists/subscribe.json");
             return new Response(Response.ResponseCode.UnknownError);
         }
     }
