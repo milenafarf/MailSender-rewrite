@@ -25,7 +25,7 @@ namespace TestApp
         {
             //ITransactionalSender mandrill = new MandrillSender ("apikey", "frommail");
             //mandrill.TestSender();
-            INewsletterSender mailchimp = new MailChimpSender("7fa934e67089982fb907edc79e202f87-us8", "from@from.from");
+            INewsletterSender mailchimp = new MailChimpSender("ca08aa943edea30ca8d05573bf306f1e-us8", "from@from.from");
             mailchimp.TestSender ();
             //mailchimp.ToString ();
         }

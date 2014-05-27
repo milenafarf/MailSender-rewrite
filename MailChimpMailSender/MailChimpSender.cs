@@ -101,6 +101,7 @@ namespace MailChimpMailSender
             r.Filters = new MailChimpFilters();
             r.Filters.ListName = name;
             MailChimpResponse response = this.SendRequest(r, "/lists/list.json");
+            
             return new Response(Response.ResponseCode.UnknownError);
         }
 
@@ -108,7 +109,7 @@ namespace MailChimpMailSender
         {
             var r = new MailChimpRequest();
             r.ApiKey = this.apiKey;
-            //r.Id = uzyskac z GetReceiversList(list_name)
+            r.Id = GetReceiversList(list_name).id;
             r.Email.Email = receiver.Email;
             MailChimpResponse response = this.SendRequest(r, "/lists/subscribe.json");
             return new Response(Response.ResponseCode.UnknownError);

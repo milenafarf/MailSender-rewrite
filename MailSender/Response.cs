@@ -13,25 +13,31 @@ namespace MailSender
     /// </summary>
     public class Response
     {   
-        public Response(ResponseCode code, ResponseSubCode subCode, string message)
+        public Response(ResponseCode code, ResponseSubCode subCode, string message, string id)
         {
             this.Code = code;
             this.SubCode = subCode;
             this.Message = message;
+            this.id = id;
         }
 
         public Response(ResponseCode code, string message)
-            : this(code, ResponseSubCode.None, message)
+            : this(code, ResponseSubCode.None, message, string.Empty)
         {
         }
 
         public Response(ResponseCode code)
-            : this(code, ResponseSubCode.None, string.Empty)
+            : this(code, ResponseSubCode.None, string.Empty, string.Empty)
         {
         }
 
         public Response(ResponseCode code, ResponseSubCode subCode)
-            : this(code, subCode, string.Empty)
+            : this(code, subCode, string.Empty, string.Empty)
+        {
+        }
+
+        public Response(ResponseCode code, string id)
+            : this(code, ResponseSubCode.None, string.Empty, id)
         {
         }
 
@@ -40,6 +46,11 @@ namespace MailSender
         public ResponseSubCode SubCode;
 
         public string Message;
+
+        /// <summary>
+        /// Pobiera lub ustawia id listy subskrybentow
+        /// </summary>
+        public string id { get; set; }
 
         public enum ResponseCode
         {

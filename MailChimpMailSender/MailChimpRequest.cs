@@ -60,6 +60,6 @@ namespace MailChimpMailSender
         /// Pobiera lub ustawia id listy subskrybentów 
         /// </summary>
         [DataMember(Name = "id", EmitDefaultValue = false)]
-        public MailChimpFilters Id { get; set; }
+        public string Id { get; set; }
     }
 }

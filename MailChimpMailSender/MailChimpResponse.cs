@@ -14,7 +14,7 @@ namespace MailChimpMailSender
     public class MailChimpResponse
     {
         /// <summary>
-        /// Pobiera lub ustawia liczbę kampanii spełniających kryteria zapytania.
+        /// Pobiera lub ustawia liczbę kampanii lub list subskrybentow spełniających kryteria zapytania.
         /// </summary>
         /// <value>Status wiadomości</value>
         [DataMember(Name = "total")]
