@@ -18,7 +18,7 @@ namespace MailSender
             this.Code = code;
             this.SubCode = subCode;
             this.Message = message;
-            this.id = id;
+            this.Id = id;
         }
 
         public Response(ResponseCode code, string message)
