@@ -21,7 +21,7 @@ namespace MailChimpMailSender
         private readonly JsonSerializer<MailChimpRequest> requestSerializer;
         private readonly JsonDeserializer<MailChimpResponse> responseDeserializer;
 
-        private readonly string apiUrl = "https://uk1.api.mailchimp.com/2.0";
+        private readonly string apiUrl;
 
         /// <summary>
         /// Typ danych przesyłanych do serwera.
@@ -38,13 +38,25 @@ namespace MailChimpMailSender
         /// </summary>
         private readonly string fromMail;
 
+        /// <summary>
+        /// Konstruktor MailChimpSender. W przypadku podania błędnego apikeya metody klasy będą zwracać response z wiadomością o błędnym apikey'u.
+        /// </summary>
+        /// <param name="apikey">Apikey należy pobrać z strony mailchimp.com</param>
+        /// <param name="frommail">Ten mail będzie widoczny jedynie jako adresat wiadomości.</param>
+        /// albo na końcu apikey'a. Przykładowe datacentr to "us1","uk1"</param>
         public MailChimpSender(string apikey, string frommail)
         {
-            this.apiKey = apikey;
+            this.apiKey = apikey.Substring(0,apikey.Length-4);
             this.fromMail = frommail;
+
+            string datacenter = apikey.Substring(apikey.Length-3,3);
+            this.apiUrl = "https://"+datacenter+".api.mailchimp.com/2.0";
+
+            this.connector = new HttpIO(apiUrl, contentType);
             this.requestSerializer = new JsonSerializer<MailChimpRequest>();
             this.responseDeserializer = new JsonDeserializer<MailChimpResponse>();
         }
+
 
         /// <summary>
         /// Metoda sprawdzająca czy połączenie z serwisem działa poprawnie.
@@ -62,9 +74,7 @@ namespace MailChimpMailSender
 
         /// <summary>
         /// Wysyła zapytanie typu MailChimp
-        /// 
-        /// 
-        /// uest do serwera, zwracając jego odpowiedź
+        ///request do serwera, zwracając jego odpowiedź
         /// w formie MailChimpResponse
         /// </summary>
         /// <returns>Odpowiedź otrzymana od serwera</returns>

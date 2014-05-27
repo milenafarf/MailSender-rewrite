@@ -6,6 +6,7 @@
 
 namespace TestApp
 {
+    using System;
     using MailSender;
     using MandrillMailSender;
     using MailChimpMailSender;
@@ -24,7 +25,7 @@ namespace TestApp
         {
             //ITransactionalSender mandrill = new MandrillSender ("apikey", "frommail");
             //mandrill.TestSender();
-            INewsletterSender mailchimp = new MailChimpSender("apikey", "from@from.from");
+            INewsletterSender mailchimp = new MailChimpSender("7fa934e67089982fb907edc79e202f87-us8", "from@from.from");
             mailchimp.TestSender ();
             //mailchimp.ToString ();
         }

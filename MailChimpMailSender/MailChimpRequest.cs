@@ -14,7 +14,7 @@ namespace MailChimpMailSender
     [DataContract]
     public class MailChimpRequest
     {
-        [DataMember(Name = "key", EmitDefaultValue = false)]
+        [DataMember(Name = "apikey", EmitDefaultValue = false)]
         public string ApiKey { get; set; }
 
         /// <summary>
