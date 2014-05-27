@@ -17,6 +17,6 @@ namespace MailSender
 
         Response GetReceiversList(string name);
 
-        Response AddReciver(Receiver receiver, string list_name);
+        Response AddReciver(Receiver receiver, string listname);
     }
 }

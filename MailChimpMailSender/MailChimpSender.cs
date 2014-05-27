@@ -104,7 +104,7 @@ namespace MailChimpMailSender
             return new Response(Response.ResponseCode.UnknownError);
         }
 
-        public Response AddReciver(Receiver receiver, string list_name)
+        public Response AddReciver(Receiver receiver, string listname)
         {
             var r = new MailChimpRequest();
             r.ApiKey = this.apiKey;
