@@ -83,9 +83,7 @@ namespace MailChimpMailSender
 
         /// <summary>
         /// Wysyła zapytanie typu MailChimp
-        /// 
-        /// 
-        /// uest do serwera, zwracając jego odpowiedź
+        /// Request do serwera, zwracając jego odpowiedź
         /// w formie MailChimpResponse
         /// </summary>
         /// <returns>Odpowiedź otrzymana od serwera</returns>
@@ -247,7 +245,7 @@ namespace MailChimpMailSender
             
             return response.Complete != null ? (response.Complete == "True" ?
                 new Response(Response.ResponseCode.Ok) : new Response(Response.ResponseCode.UnknownError)):
-                new Response(Response.ResponseCode.UnknownError,response.Error);
+                new Response(Response.ResponseCode.UnknownError, response.Error);
         }
 
     }
