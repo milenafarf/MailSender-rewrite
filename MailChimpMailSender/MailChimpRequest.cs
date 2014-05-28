@@ -37,20 +37,20 @@ namespace MailChimpMailSender
         /// <value>The options.</value>
         [DataMember(Name = "options", EmitDefaultValue = false)]
         public MailChimpOptions Options { get; set; }
-        
-         /// <summary>
+
+        /// <summary>
         /// Pobiera lub ustawia treść kampanii
         /// </summary>
         [DataMember(Name = "content", EmitDefaultValue = false)]
         public MailChimpContent Content { get; set; }
-        
+
         /// <summary>
         /// Pobiera lub ustawia adres email subskrybenta
         /// </summary>
         [DataMember(Name = "email", EmitDefaultValue = false)]
         public MailChimpEmail Email { get; set; }
-        
-         /// <summary>
+
+        /// <summary>
         /// Pobiera lub ustawia filtry do uzyskania list subskrybentów 
         /// </summary>
         [DataMember(Name = "filters", EmitDefaultValue = false)]
@@ -63,3 +63,4 @@ namespace MailChimpMailSender
         public string Id { get; set; }
     }
 }
+

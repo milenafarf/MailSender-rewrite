@@ -39,6 +39,12 @@ namespace MailChimpMailSender
         /// <value>Nazwa odbiorcy</value>
         [DataMember(Name = "to_name", EmitDefaultValue = false)]
         public string ToName { get; set; }
+
+        /// <summary>
+        /// Tytuł kampanii. W razie niepodania kampania przyjmuje nazwę tematu.
+        /// </summary>
+        [DataMember(Name = "title", EmitDefaultValue = false)]
+        public string Title { get; set; }
     }
     
 }

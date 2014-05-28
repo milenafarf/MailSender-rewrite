@@ -13,10 +13,10 @@ namespace MailSender
     {
         Response TestSender();
 
-        Response CreateNewReceiversList(List<Receiver> receivers);
+        Response GetSubscribersList(string name);
 
-        Response GetReceiversList(string name);
+        Response AddSubscriberTolistByName(string listName, Receiver receiver);
 
-        Response AddReciver(Receiver receiver, string list_name);
+        Response AddSubscriberTolistById(string listId, Receiver receiver);
     }
 }
