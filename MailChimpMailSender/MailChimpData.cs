@@ -22,7 +22,7 @@ namespace MailChimpMailSender
         /// </summary>
         /// <value>The email.</value>
         [DataMember(Name = "id", EmitDefaultValue = false)]
-        public string Email { get; set; }
+        public string Id { get; set; }
 
         /// <summary>
         /// Pobiera lub ustawia id listy w aplikacji MailChimp
