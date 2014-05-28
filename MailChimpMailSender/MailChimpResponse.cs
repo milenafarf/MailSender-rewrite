@@ -68,11 +68,17 @@ namespace MailChimpMailSender
         /// <value>Wiadomość zwracana przez serwer</value>
         [DataMember(Name = "error")]
         public string Error { get; set; }
-        
+
         /// <summary>
         /// Pobiera lub ustawia dane o listach subskrybentów pasujących do przekazanych w zapytaniu filtrów
         /// </summary>
         [DataMember(Name = "data")]
         public List<MailChimpData> Data { get; set; }
+
+        /// <summary>
+        /// Powiadamia czy zostało wykonane zadanie związane z zatrzymaniem, bądź ponownym wystartowaniem kampanii.
+        /// </summary>
+        [DataMember(Name = "complete")]
+        public string Complete { get; set; }
     }
 }

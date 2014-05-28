@@ -9,6 +9,10 @@ namespace MandrillMailSender
 {
     using System;
     using System.Collections.Generic;
+    using System.IO;
+    using System.Net;
+    using System.Runtime.Serialization.Json;
+    using System.Text;
     using MailSender;
 
     /// <summary>
@@ -43,7 +47,7 @@ namespace MandrillMailSender
         /// <summary>
         /// Inicjalizuje nową instancję klasy <see cref="MandrillMailSender.MandrillSender"/>.
         /// </summary>
-        /// <param name="apikey">Klucz identyfikujący u żytkownika usługi Mandrill</param>
+        /// <param name="apikey">Klucz identyfikujący u żytkownika usługi Mandrill<est/param>
         /// <param name="frommail">Adres który przekazywany jest jako wysyłający wiadomość.</param>
         public MandrillSender(string apikey, string frommail)
         {
@@ -66,6 +70,7 @@ namespace MandrillMailSender
             return response.Ping.Equals("PONG!") ?
                 new Response(Response.ResponseCode.Ok, "PONG!") :
                 new Response(Response.ResponseCode.UnknownError);
+
         }
 
         /// <summary>
@@ -88,6 +93,8 @@ namespace MandrillMailSender
             return new Response(Response.ResponseCode.UnknownError);
         }
 
+
+
         /// <summary>
         /// Wysyła zapytanie typu MandrillRequest do serwera, zwracając jego odpowiedź
         /// w formie MandrillResponse
@@ -109,7 +116,7 @@ namespace MandrillMailSender
         /// </summary>
         /// <returns>Odowiedź otrzymana od serwera.</returns>
         /// <param name="mail">Wiadomość którą chcemy wysłać.</param>
-        /// <param name="receivers">Odbiorca wiadomości.</param>
+        /// <param name="receiver">Odbiorca wiadomości.</param>
         public Response SendMail(Mail mail, List<Receiver> receivers)
         {
             var r = new MandrillRequest();
@@ -122,9 +129,9 @@ namespace MandrillMailSender
             {
                 r.Message.To.Add(new MandrillTo(rec));
             }
-
             MandrillResponse response = this.SendRequest(r, "/messages/send.json");
             return new Response(Response.ResponseCode.UnknownError);
         }
+
     }
 }
