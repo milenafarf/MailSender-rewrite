@@ -4,7 +4,7 @@
 //  </copyright>
 // -----------------------------------------------------------------------
 
-namespace UnitTestMailChimp
+namespace MailSenderUnitTests
 {
     using System;
     using MailChimpMailSender;
@@ -19,7 +19,7 @@ namespace UnitTestMailChimp
     /// MailChimpSender.CreateCampaign(string listId, string subject, string toName) : Response
     /// </summary>
     [TestClass]
-    public class UnitTestsMailChimp
+    public class MailChimpUnitTests
     {
         /// <summary>
         /// Sender MailChimpa. Główny obiekt do testowania.
