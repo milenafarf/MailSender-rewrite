@@ -3,11 +3,11 @@
 //      Author: m (m.dobrzynski@outlook.com).
 //  </copyright>
 // -----------------------------------------------------------------------
-using System.IO;
-using System.Text;
 
 namespace MailSenderHelpers
 {
+    using System.IO;
+    using System.Text;
     using System.Net;
 
     public class HttpIO
