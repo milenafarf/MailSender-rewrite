@@ -132,6 +132,5 @@ namespace MandrillMailSender
             MandrillResponse response = this.SendRequest(r, "/messages/send.json");
             return new Response(Response.ResponseCode.UnknownError);
         }
-
     }
 }

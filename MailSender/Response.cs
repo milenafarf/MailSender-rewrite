@@ -36,11 +36,6 @@ namespace MailSender
         {
         }
 
-        public Response(ResponseCode code, string id)
-            : this(code, ResponseSubCode.None, string.Empty, id)
-        {
-        }
-
         public ResponseCode Code;
 
         public ResponseSubCode SubCode;
