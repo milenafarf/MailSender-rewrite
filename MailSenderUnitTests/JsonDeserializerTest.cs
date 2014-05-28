@@ -19,7 +19,7 @@ namespace MailSenderUnitTests
         /// Testuje podstawową deserializację niepełnego obiektu
         /// </summary>
         [TestMethod]
-        public void TestCase()
+        public void TestJsonDeserializer()
         {
             string testJson = "{ \"text\" : \"testowy string\" }";
             var a = new JsonDeserializer<TestJsonObject>();
@@ -35,7 +35,7 @@ namespace MailSenderUnitTests
         /// oraz przekazywanie pól w złej kolejności wewnątrz obiektu JSON.
         /// </summary>
         [TestMethod]
-        public void TestCase2()
+        public void TestJsonDeserializer2()
         {
             string testJson = "{ \"NuMbEr\" : 1, \"text\" : \"testowy string\" }";
             var a = new JsonDeserializer<TestJsonObject>();
