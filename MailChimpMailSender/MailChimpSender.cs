@@ -131,7 +131,7 @@ namespace MailChimpMailSender
             r.Filters = new MailChimpFilters();
             r.Filters.ListName = name;
             MailChimpResponse response = this.SendRequest(r, "/lists/list.json");
-            return response.Error == null ? new Response(Response.ResponseCode.Ok, response.Data[0].Email) :
+            return response.Error == null ? new Response(Response.ResponseCode.Ok, response.Data[0].Id) :
                 new Response(Response.ResponseCode.UnknownError);
         }
 
