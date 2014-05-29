@@ -27,7 +27,7 @@ namespace MailChimpMailSender
         // że link wygląda tak https://<dc>.api.mailchimp.com/2.0/ gdzie <dc> to np. uk1 albo jak u mnie us8.
         // Można zrobić tak, że te dc jest wstawiane na podstawie apikeya
         // private readonly string apiUrl = "https://uk1.api.mailchimp.com/2.0";
-        
+
         /// <summary>
         /// Link za pośrednictwem, którego będą wysyłąne zapytania do serwera. Zawiera datacenter i wersję api.
         /// </summary>
@@ -97,7 +97,7 @@ namespace MailChimpMailSender
         }
 
         public List<SubscribersList> GetAllLists()
-        {            
+        {
             var r = new MailChimpRequest();
             r.ApiKey = this.apiKey;
             MailChimpResponse response = this.SendRequest(r, "/lists/list.json");
@@ -108,7 +108,7 @@ namespace MailChimpMailSender
                 sl.Id = data.Id;
                 sl.Name = data.Name;
                 lists.Add(sl);
-            }            
+            }
             return lists;
         }
 
@@ -189,7 +189,7 @@ namespace MailChimpMailSender
             r.Content.Text = "Example text";
 
             MailChimpResponse response = this.SendRequest(r, "/campaigns/create.json");
-           
+
             return response.Error == null ? new Response(Response.ResponseCode.Ok) :
                 new Response(Response.ResponseCode.UnknownError, response.Error);
         }
@@ -244,8 +244,8 @@ namespace MailChimpMailSender
             r.ApiKey = this.apiKey;
             r.CId = campaignName;
             MailChimpResponse response = this.SendRequest(r, "/campaigns/pause.json");
-            
-            return response.Complete != null ? (response.Complete == "True" ? 
+
+            return response.Complete != null ? (response.Complete == "True" ?
                 new Response(Response.ResponseCode.Ok) : new Response(Response.ResponseCode.UnknownError)) :
                 new Response(Response.ResponseCode.UnknownError, response.Error);
         }
@@ -261,10 +261,11 @@ namespace MailChimpMailSender
             r.ApiKey = this.apiKey;
             r.CId = campaignName;
             MailChimpResponse response = this.SendRequest(r, "/campaigns/resume.json");
-            
+
             return response.Complete != null ? (response.Complete == "True" ?
-                new Response(Response.ResponseCode.Ok) : 
-                new Response(Response.ResponseCode.UnknownError)) : 
+                new Response(Response.ResponseCode.Ok) :
+                new Response(Response.ResponseCode.UnknownError)) :
                 new Response(Response.ResponseCode.UnknownError, response.Error);
         }
+    }
 }
