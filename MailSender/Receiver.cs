@@ -6,6 +6,9 @@
 
 namespace MailSender
 {
+    /// <summary>
+    /// Klasa przechowująca dane o odbiorcy emaila
+    /// </summary>
     public class Receiver
     {
         /// <summary>

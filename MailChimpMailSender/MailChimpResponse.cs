@@ -10,6 +10,9 @@ namespace MailChimpMailSender
     using System.Collections.Generic;
     using System.Runtime.Serialization;
 
+    /// <summary>
+    /// Klasa odpowiadająca danym otrzymywanym jako odpowiedź z serwisu MailChimp
+    /// </summary>
     [DataContract]
     public class MailChimpResponse
     {
@@ -35,9 +38,9 @@ namespace MailChimpMailSender
         public string Text { get; set; }
 
         /// <summary>
-        /// Pobiera lub ustawia wiadomosc zwrotną, czy udało sie nawiazac połącznie.
+        /// Pobiera lub ustawia wiadomość zwrotną, czy udało się nawiązać połącznie.
         /// </summary>
-        /// <value>The message.</value>
+        /// <value>Wiadomość zwrotna, czy udało się nawiązać połączenie z serwisem MailChimp</value>
         [DataMember(Name = "msg")]
         public string Msg { get; set; }
 
@@ -80,5 +83,23 @@ namespace MailChimpMailSender
         /// </summary>
         [DataMember(Name = "complete")]
         public string Complete { get; set; }
+
+        /// <summary>
+        /// Pobiera lub ustawia adres email dodany do listy subskrybentów
+        /// </summary>
+        [DataMember(Name = "email")]
+        public string Email { get; set; }
+
+        /// <summary>
+        /// Pobiera lub ustawia id adresu email dodany do listy subskrybentów
+        /// </summary>
+        [DataMember(Name = "euid")]
+        public string Euid { get; set; }
+
+        /// <summary>
+        /// Pobiera lub ustawia id adres email jako członka listy do której został dodany
+        /// </summary>
+        [DataMember(Name = "leid")]
+        public string Leid { get; set; }
     }
 }

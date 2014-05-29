@@ -31,13 +31,13 @@ namespace MailChimpMailSender
         public string Subject { get; set; }
 
         /// <summary>
-        /// Pobiera lub ustawia adres email przekazywny jako wysyłający wiadomości email.
+        /// Pobiera lub ustawia adres email przekazywany jako wysyłający wiadomości email.
         /// </summary>
         [DataMember(Name = "from_email", EmitDefaultValue = false)]
         public string FromEmail { get; set; }
 
         /// <summary>
-        /// Pobiera lub ustawia nazwe nadawcy wiadomości.
+        /// Pobiera lub ustawia nazwę nadawcy wiadomości.
         /// </summary>
         [DataMember(Name = "from_name", EmitDefaultValue = false)]
         public string FromName { get; set; }

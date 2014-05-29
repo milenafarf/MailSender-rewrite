@@ -32,7 +32,7 @@ namespace MailChimpMailSender
         public int Webid { get; set; }
 
         /// <summary>
-        /// Pobiera lub ustawia nazwę listy suskrybetów
+        /// Pobiera lub ustawia nazwę listy subskrybentów
         /// </summary>
         [DataMember(Name = "name", EmitDefaultValue = false)]
         public string Name { get; set; }

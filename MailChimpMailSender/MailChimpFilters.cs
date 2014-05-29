@@ -20,7 +20,7 @@ namespace MailChimpMailSender
         /// <summary>
         /// Pobiera lub ustawia id listy odbiorców kampanii
         /// </summary>
-        /// <value>Identyfikator listy odbiorców kampaniis</value>
+        /// <value>Identyfikator listy odbiorców kampanii</value>
         [DataMember(Name = "list_id", EmitDefaultValue = false)]
         public string ListId { get; set; }
 

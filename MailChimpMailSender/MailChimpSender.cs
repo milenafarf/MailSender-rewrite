@@ -21,12 +21,23 @@ namespace MailChimpMailSender
     /// </summary>
     public class MailChimpSender : INewsletterSender
     {
+        /// <summary>
+        /// 
+        /// </summary>
         private readonly HttpIO connector;
+
+        /// <summary>
+        /// Serializer obiektu MailpChimpRequest
+        /// </summary>
         private readonly JsonSerializer<MailChimpRequest> requestSerializer;
+
+        /// <summary>
+        /// Serializer obiektu MailpChimpResponse
+        /// </summary>
         private readonly JsonDeserializer<MailChimpResponse> responseDeserializer;
 
         /// <summary>
-        /// Link za pośrednictwem, którego będą wysyłąne zapytania do serwera. Zawiera datacenter i wersję api.
+        /// Link za pośrednictwem, którego będą wysyłane zapytania do serwera. Zawiera datacenter i wersję api.
         /// </summary>
         private readonly string apiUrl;
 
@@ -46,7 +57,8 @@ namespace MailChimpMailSender
         private readonly string fromMail;
 
         /// <summary>
-        /// Konstruktor MailChimpSender. W przypadku podania błędnego apikeya metody klasy będą zwracać response z wiadomością o błędnym apikey'u.
+        /// Inicjalizuje nową instancję klasy <see cref="MailChimpSender" />
+        /// W przypadku podania błędnego apikeya metody klasy będą zwracać response z wiadomością o błędnym apikey'u.
         /// </summary>
         /// <param name="apikey">Apikey należy pobrać z strony mailchimp.com</param>
         /// <param name="frommail">Ten mail będzie widoczny jedynie jako adresat wiadomości.
@@ -65,7 +77,7 @@ namespace MailChimpMailSender
         /// <summary>
         /// Metoda sprawdzająca czy połączenie z serwisem działa poprawnie.
         /// </summary>
-        /// <returns>Odowiedź otrzymana od serwera.</returns>
+        /// <returns>Odpowiedź otrzymana od serwera.</returns>
         public Response TestSender()
         {
             var r = new MailChimpRequest();
@@ -75,24 +87,12 @@ namespace MailChimpMailSender
                 new Response(Response.ResponseCode.Ok, "Everything's Chimpy!") :
                 new Response(Response.ResponseCode.UnknownError);
         }
-
+        
         /// <summary>
-        /// Wysyła zapytanie typu MailChimp
-        /// Request do serwera, zwracając jego odpowiedź
-        /// w formie MailChimpResponse
+        /// Metoda zwraca listę wszystkich list subskrybentów 
+        /// (ich id i nazwy przechowywane w obiekcie klasy SubscribersList)
         /// </summary>
-        /// <returns>Odpowiedź otrzymana od serwera</returns>
-        /// <param name="requestContent">Zapytanie w formacie MailChimpRequest</param>
-        /// <param name="url">Adres url </param>
-        private MailChimpResponse SendRequest(MailChimpRequest requestContent, string url)
-        {
-            MailChimpResponse response;
-            var requestJson = this.requestSerializer.Serialize(requestContent);
-            var responseJson = this.connector.ProcessRequest(url, requestJson);
-            response = this.responseDeserializer.Deserialize(responseJson);
-            return response;
-        }
-
+        /// <returns>Lista z danymi o wszystkich listach subskrybentów</returns>
         public List<SubscribersList> GetAllLists()
         {
             var r = new MailChimpRequest();
@@ -111,9 +111,9 @@ namespace MailChimpMailSender
         }
 
         /// <summary>
-        /// Metoda dodaje subskrybenta do listy po Id Listy
+        /// Metoda dodaje subskrybentów do listy po Id Listy
         /// </summary>
-        /// <param name="listId">Id listy sunskrybentów</param>
+        /// <param name="listId">Id listy subskrybentów</param>
         /// <param name="receiver">Odbiorca maila</param>
         /// <returns>Odpowiedź od serwera</returns>
         public Response AddSubscriberTolistById(string listId, Receiver receiver)
@@ -128,6 +128,12 @@ namespace MailChimpMailSender
                 new Response(Response.ResponseCode.UnknownError);
         }
 
+        /// <summary>
+        /// Metoda dodaje subskrybenta do listy po nazwie listy
+        /// </summary>
+        /// <param name="listName">Nazwa listy subskrybentów</param>
+        /// <param name="receiver">Odbiorca maila</param>
+        /// <returns>Odpowiedź od serwera</returns>
         public Response AddSubscriberTolistByName(string listName, Receiver receiver)
         {
             string listId;
@@ -143,6 +149,11 @@ namespace MailChimpMailSender
             return this.AddSubscriberTolistById(listId, receiver);
         }
 
+        /// <summary>
+        /// Metoda zwraca jedną listę subskrybentów o nazwie podanej jako argument
+        /// </summary>
+        /// <param name="name">Odpowiedź otrzymana od serwera</param>
+        /// <returns>Odpowiedź otrzymana od serwera</returns>
         public Response GetSubscribersList(string name)
         {
             var r = new MailChimpRequest();
@@ -155,9 +166,9 @@ namespace MailChimpMailSender
         }
 
         /// <summary>
-        /// Metoda pomocnicza zwracająca id listy subskrybentów ze względu na name. 
+        /// Metoda pomocnicza zwracająca id listy subskrybentów ze względu na nazwę listy subskrybentów. 
         /// </summary>
-        /// <param name="name"></param>
+        /// <param name="name">Nazwa listy subskrybentów</param>
         /// <returns>Odpowiedź otrzymana od serwera.</returns>
         public string GetSubscriberIdListByName(string name)
         {
@@ -199,14 +210,14 @@ namespace MailChimpMailSender
         }
 
         /// <summary>
-        /// 
+        /// Metoda tworząca nową kampanię
         /// </summary>
-        /// <param name="listId"></param>
-        /// <param name="subject"></param>
-        /// <param name="toName"></param>
-        /// <param name="title"></param>
-        /// <param name="fromName"></param>
-        /// <returns>odpowiedź od serwera</returns>
+        /// <param name="listId">Id listy subskrybentów</param>
+        /// <param name="subject">Temat emaili wysyłanych w kampanii</param>
+        /// <param name="toName">Nazwa adresata maila w kampanii (nie adres email)</param>
+        /// <param name="title">Nazwa kampani</param>
+        /// <param name="fromName">Nazwa nadawcy emaila</param>
+        /// <returns>Odpowiedź od serwera</returns>
         public Response CreateCampaign(string listId, string subject, string toName, string title, string fromName)
         {
             return this.CreateCampaign(listId, subject, toName, title, fromName, this.fromMail);
@@ -215,11 +226,11 @@ namespace MailChimpMailSender
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="listId"></param>
-        /// <param name="subject"></param>
-        /// <param name="toName"></param>
-        /// <param name="title"></param>
-        /// <returns></returns>
+        /// <param name="listId">Id listy subskrybentów</param>
+        /// <param name="subject">Temat każdego emaila w kampanii</param>
+        /// <param name="toName">Nazwa adresata maila w kampanii (nie adres email)</param>
+        /// <param name="title">Nazwa kampani</param>
+        /// <returns>Odpowiedź od serwera</returns>
         public Response CreateCampaign(string listId, string subject, string toName, string title)
         {
             return this.CreateCampaign(listId, subject, toName, title, this.fromMail.Substring(0, this.fromMail.IndexOf('@')));
@@ -228,20 +239,20 @@ namespace MailChimpMailSender
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="listId"></param>
-        /// <param name="subject"></param>
-        /// <param name="toName"></param>
-        /// <returns></returns>
+        /// <param name="listId">Id listy subskrybentów</param>
+        /// <param name="subject">Temat każdego emaila w kampanii</param>
+        /// <param name="toName">Nazwa adresata maila w kampanii (nie adres email)</param>
+        /// <returns>Odpowiedź od serwera</returns>
         public Response CreateCampaign(string listId, string subject, string toName)
         {
             return this.CreateCampaign(listId, subject, toName, subject);
         }
 
         /// <summary>
-        /// 
+        /// Zatrzymuje wysyłanie wiadomości w kampaniach AutoResponder lub  RSS 
         /// </summary>
-        /// <param name="campaignName"></param>
-        /// <returns></returns>
+        /// <param name="campaignName">Nazwa kampanii</param>
+        /// <returns>Odpowiedź od serwera</returns>
         public Response PauseCampaign(string campaignName)
         {
             var r = new MailChimpRequest();
@@ -255,9 +266,9 @@ namespace MailChimpMailSender
         }
 
         /// <summary>
-        /// 
+        /// Wznawia wysyłanie wiadomości w kampaniach AutoResponder lub  RSS 
         /// </summary>
-        /// <param name="campaignName"></param>
+        /// <param name="campaignName">Nazwa kampanii</param>
         /// <returns>Odpowiedź otrzymana od serwera.</returns>
         public Response ResumeCampaign(string campaignName)
         {
@@ -272,5 +283,21 @@ namespace MailChimpMailSender
                 new Response(Response.ResponseCode.UnknownError, response.Error);
         }
 
+        /// <summary>
+        /// Wysyła zapytanie typu MailChimp
+        /// Request do serwera, zwracając jego odpowiedź
+        /// w formie MailChimpResponse
+        /// </summary>
+        /// <returns>Odpowiedź otrzymana od serwera</returns>
+        /// <param name="requestContent">Zapytanie w formacie MailChimpRequest</param>
+        /// <param name="url">Adres url </param>
+        private MailChimpResponse SendRequest(MailChimpRequest requestContent, string url)
+        {
+            MailChimpResponse response;
+            var requestJson = this.requestSerializer.Serialize(requestContent);
+            var responseJson = this.connector.ProcessRequest(url, requestJson);
+            response = this.responseDeserializer.Deserialize(responseJson);
+            return response;
+        }
     }
 }

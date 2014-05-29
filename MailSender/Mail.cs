@@ -27,10 +27,19 @@ namespace MailSender
             this.Html = html;
         }
 
+        /// <summary>
+        /// Pobiera lub ustawia treść wiadomości
+        /// </summary>
         public string Content { get; set; }
 
+        /// <summary>
+        /// Pobiera lub ustawia temat wiadomości
+        /// </summary>
         public string Subject { get; set; }
 
+        /// <summary>
+        /// Pobiera lub ustawia wartość wskazującą, czy wiadomość zawiera treści html
+        /// </summary>
         public bool Html { get; set; }
     }
 }

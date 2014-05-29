@@ -11,20 +11,20 @@ namespace MailSender
 
     /// <summary>
     /// Interfejs definiujący metody implementowane przez klasy
-    /// komunikujące się z serwisami wysyłającymi wiadomoścu email. 
+    /// komunikujące się z serwisami wysyłającymi wiadomości email. 
     /// </summary>
     public interface ITransactionalSender
     {
         /// <summary>
         /// Metoda sprawdzająca czy połączenie z serwisem działa poprawnie.
         /// </summary>
-        /// <returns>Odowiedź otrzymana od serwera.</returns>
+        /// <returns>Odpowiedź otrzymana od serwera.</returns>
         Response TestSender();
 
         /// <summary>
         /// Metoda wysyłająca wiadomość.
         /// </summary>
-        /// <returns>Odowiedź otrzymana od serwera.</returns>
+        /// <returns>Odpowiedź otrzymana od serwera.</returns>
         /// <param name="mail">Wiadomość którą chcemy wysłać.</param>
         /// <param name="receiver">Odbiorca wiadomości.</param>
         Response SendMail(Mail mail, Receiver receiver);
@@ -34,7 +34,7 @@ namespace MailSender
         /// </summary>
         /// <param name="mail">Wiadomość którą chcemy wysłać.</param>
         /// <param name="receivers">Lista zawierająca odbiorców wiadomości.</param>
-        /// <returns>Odowiedź otrzymana od serwera.</returns>
+        /// <returns>Odpowiedź otrzymana od serwera.</returns>
         Response SendMail(Mail mail, List<Receiver> receivers);
     }
 }

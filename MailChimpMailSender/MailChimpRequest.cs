@@ -11,9 +11,15 @@ namespace MailChimpMailSender
     using System.Runtime.Serialization;
     using MailSender;
 
+    /// <summary>
+    /// Klasa odpowiadająca danym przekazywanym w zapytaniu do serwisu MailChimp
+    /// </summary>
     [DataContract]
     public class MailChimpRequest
     {
+        /// <summary>
+        /// Pobiera lub ustawia klucz identyfikujący w serwisie MailChimp.
+        /// </summary>
         [DataMember(Name = "apikey", EmitDefaultValue = false)]
         public string ApiKey { get; set; }
 
@@ -25,9 +31,9 @@ namespace MailChimpMailSender
         public string CId { get; set; }
 
         /// <summary>
-        /// Pobiera lub ustawia typ kampani, jeden z "regular", "plaintext", "absplit", "rss", "auto".
+        /// Pobiera lub ustawia typ kampanii, jeden z "regular", "plaintext", "absplit", "rss", "auto".
         /// </summary>
-        /// <value>Typ kampani</value>
+        /// <value>Typ kampanii</value>
         [DataMember(Name = "type", EmitDefaultValue = false)]
         public string Type { get; set; }
 
