@@ -23,7 +23,9 @@ namespace TestApp
         /// <param name="args">Parametry przekazane do programu.</param>
         public static void Main(string[] args)
         {
-            ITransactionalSender mandrill = new MandrillSender("", "");
+            
+            ITransactionalSender mandrill = new MandrillSender(string.Empty, string.Empty);
+
             mandrill.TestSender();
 
             INewsletterSender mailchimp = new MailChimpSender("", "frommail@from.mail");

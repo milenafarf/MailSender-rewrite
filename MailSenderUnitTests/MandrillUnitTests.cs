@@ -1,10 +1,10 @@
 ﻿// -----------------------------------------------------------------------
-//  <copyright file="UnitTestsMandrill.cs" company="DevCore.NET">
+//  <copyright file="MandrillUnitTests.cs" company="DevCore.NET">
 //      Author: m (chrystian.kislo@gmail.com).
 //  </copyright>
 // -----------------------------------------------------------------------
 
-namespace UnitTests
+namespace MailSenderUnitTests
 {
     using System;
     using MailSender;
@@ -18,7 +18,7 @@ namespace UnitTests
     /// MandrillMailSender.SendMail(Mail, List"Receiver") : Response 
     /// </summary>
     [TestClass]
-    public class UnitTestsMandrill
+    public class MandrillUnitTests
     {
         /// <summary>
         /// Mail używany w testkach, które zwracają poprawną wartość.

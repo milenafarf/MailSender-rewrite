@@ -52,15 +52,29 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="JsonSerializerTest.cs" />
+    <Compile Include="MailChimpUnitTests.cs" />
+    <Compile Include="MandrillUnitTests.cs" />
     <Compile Include="TestJsonObject.cs" />
     <Compile Include="JsonDeserializerTest.cs" />
     <Compile Include="HttpIOUnitTests.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
+    <ProjectReference Include="..\MailChimpMailSender\MailChimpMailSender.csproj">
+      <Project>{4d819968-3892-4a3b-a7c3-4a24625125a1}</Project>
+      <Name>MailChimpMailSender</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MailSenderHelpers\MailSenderHelpers.csproj">
       <Project>{E141D65B-49E2-440F-94AD-379F6A0BD7F9}</Project>
       <Name>MailSenderHelpers</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MailSender\MailSender.csproj">
+      <Project>{5ba7f363-397d-4e63-b03d-881feb5890d8}</Project>
+      <Name>MailSender</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MandrillMailSender\MandrillMailSender.csproj">
+      <Project>{8d91d99a-440e-4744-902c-47662fe24ba5}</Project>
+      <Name>MandrillMailSender</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

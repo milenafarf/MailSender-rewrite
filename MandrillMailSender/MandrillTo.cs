@@ -14,7 +14,7 @@ namespace MandrillMailSender
     public class MandrillTo
     {
         /// <summary>
-        /// Inicjalizuje nową instancję? klasy <see cref="MandrillTo" />.
+        /// Inicjalizuje nową instancję klasy <see cref="MandrillTo" />.
         /// </summary>
         /// <param name="receiver">Odbiorca wiadomo?ci</param>
         public MandrillTo(Receiver receiver)

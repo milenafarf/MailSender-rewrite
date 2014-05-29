@@ -20,7 +20,7 @@ namespace MailSenderUnitTests
         /// Testuje podstawową serializację obiektu do JSON.
         /// </summary>
         [TestMethod]
-        public void TestCase()
+        public void TestJsonSerializer()
         {
             var testObj = new TestJsonObject();
             testObj.Number = 1;
@@ -37,7 +37,7 @@ namespace MailSenderUnitTests
         /// Testuje serializacje niepełnego obiektu.
         /// </summary>
         [TestMethod]
-        public void TestCase2()
+        public void TestJsonSerializer2()
         {
             var testObj = new TestJsonObject();
             testObj.Number = 1;

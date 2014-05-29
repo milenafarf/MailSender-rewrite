@@ -3,12 +3,12 @@
 //      Author: m (m.dobrzynski@outlook.com).
 //  </copyright>
 // -----------------------------------------------------------------------
-using System.IO;
-using System.Text;
 
 namespace MailSenderHelpers
 {
+    using System.IO;
     using System.Net;
+    using System.Text;
 
     public class HttpIO
     {
@@ -28,7 +28,7 @@ namespace MailSenderHelpers
             if (httpRequest != null)
             {
                 httpRequest.Method = "POST";
-                httpRequest.ContentType = dataType;
+                httpRequest.ContentType = this.dataType;
                 using (var outpuStream = new StreamWriter(httpRequest.GetRequestStream()))
                 {
                     outpuStream.Write(data);
@@ -41,6 +41,7 @@ namespace MailSenderHelpers
                     }
                 }
             }
+
             return response;
         }
     }

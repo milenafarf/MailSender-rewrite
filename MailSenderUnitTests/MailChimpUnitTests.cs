@@ -1,10 +1,10 @@
 ﻿// -----------------------------------------------------------------------
-//  <copyright file="UnitTestsMailChimp.cs" company="DevCore.NET">
+//  <copyright file="MailChimpUnitTests.cs" company="DevCore.NET">
 //      Author: m (chrystian.kislo@gmail.com).
 //  </copyright>
 // -----------------------------------------------------------------------
 
-namespace UnitTestMailChimp
+namespace MailSenderUnitTests
 {
     using System;
     using MailChimpMailSender;
@@ -19,7 +19,7 @@ namespace UnitTestMailChimp
     /// MailChimpSender.CreateCampaign(string listId, string subject, string toName) : Response
     /// </summary>
     [TestClass]
-    public class UnitTestsMailChimp
+    public class MailChimpUnitTests
     {
         /// <summary>
         /// Sender MailChimpa. Główny obiekt do testowania.
@@ -105,7 +105,7 @@ namespace UnitTestMailChimp
         [TestMethod]
         public void TestMailChimpCreateCampaign_ReturnOk()
         {
-            Response r = sender.CreateCampaign(sender.getSubscriberIdListByName(listName),campaignSubject,campaignSubscribers);
+            Response r = sender.CreateCampaign(sender.GetSubscriberIdListByName(listName), campaignSubject, campaignSubscribers);
             Assert.IsTrue(r.Code == Response.ResponseCode.Ok);
         }
     }

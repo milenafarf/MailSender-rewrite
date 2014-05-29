@@ -13,7 +13,7 @@ namespace MailSenderUnitTests
     public class HttpIOUnitTests
     {
         [TestMethod]
-        public void TestCase()
+        public void TestHttpIO()
         {
             var connector = new HttpIO(
                 "http://httpbin.org/",
@@ -26,4 +26,3 @@ namespace MailSenderUnitTests
         }
     }
 }
-

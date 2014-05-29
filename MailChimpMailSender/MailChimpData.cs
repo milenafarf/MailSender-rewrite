@@ -1,5 +1,5 @@
 ﻿// -----------------------------------------------------------------------
-//  <copyright file="MailChimpRequest.cs" company="DevCore.NET">
+//  <copyright file="MailChimpData.cs" company="DevCore.NET">
 //      Author: Milena Farfułowska (m.farfulowskai@gmail.com).
 //  </copyright>
 // -----------------------------------------------------------------------
@@ -31,12 +31,16 @@ namespace MailChimpMailSender
         [DataMember(Name = "web_id", EmitDefaultValue = false)]
         public int Webid { get; set; }
 
+        /// <summary>
+        /// Pobiera lub ustawia nazwę listy suskrybetów
+        /// </summary>
         [DataMember(Name = "name", EmitDefaultValue = false)]
         public string Name { get; set; }
 
+        /// <summary>
+        /// Pobiera lub ustawia datę utworzenia listy subskrybentów
+        /// </summary>
         [DataMember(Name = "date_created", EmitDefaultValue = false)]
         public string Datecreated { get; set; }
-
     }
 }
-

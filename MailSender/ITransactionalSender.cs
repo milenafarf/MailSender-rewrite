@@ -36,6 +36,5 @@ namespace MailSender
         /// <param name="receivers">Lista zawierająca odbiorców wiadomości.</param>
         /// <returns>Odowiedź otrzymana od serwera.</returns>
         Response SendMail(Mail mail, List<Receiver> receivers);
-
     }
 }
