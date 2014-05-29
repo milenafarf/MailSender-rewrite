@@ -83,7 +83,11 @@ namespace MandrillMailSender
             r.Message.FromName = this.fromMail;
             var rec = new MandrillTo(receiver);
             r.Message.To.Add(rec);
-            MandrillResponse response = this.SendRequest(r, "/messages/send.json");
+            MandrillResponse response = this.SendRequestHack(r, "/messages/send.json");
+            if(response.Responses[0].Status == "sent")
+            {
+                return new Response(Response.ResponseCode.Ok, "sent");
+            }
             return new Response(Response.ResponseCode.UnknownError);
         }
 
@@ -123,6 +127,22 @@ namespace MandrillMailSender
             var requestJson = this.requestSerializer.Serialize(requestContent);
             var responseJson = this.connector.ProcessRequest(url, requestJson);
             response = this.responseDeserializer.Deserialize(responseJson);
+            return response;
+        }
+
+        /// <summary>
+        /// Wysyła zapytanie typu MandrillRequest do serwera, zwracając jego odpowiedź
+        /// w formie MandrillResponse
+        /// </summary>
+        /// <returns>Odpowiedź otrzymana od serwera</returns>
+        /// <param name="requestContent">Zapytanie w formacie MandrillRequest</param>
+        /// <param name="url">Adres url </param>
+        private MandrillResponse SendRequestHack(MandrillRequest requestContent, string url)
+        {
+            MandrillResponse response;
+            var requestJson = this.requestSerializer.Serialize(requestContent);
+            var responseJson = this.connector.ProcessRequest(url, requestJson);
+            response = this.responseDeserializer.Deserialize("{ \"hack\" : " + responseJson + " }");
             return response;
         }
     }

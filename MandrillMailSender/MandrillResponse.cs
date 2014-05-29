@@ -51,7 +51,7 @@ namespace MandrillMailSender
         /// Pobiera lub ustawia kod zwracanego błędu.
         /// </summary>
         /// <value>Lista odpwiedzi z serwera dla wysłanych emaili</value>
-        [DataMember(Name = "xaxa", EmitDefaultValue = false)]
+        [DataMember(Name = "hack", EmitDefaultValue = false)]
         public List<MandrillMailStatus> Responses { get; set; }
     }
 }

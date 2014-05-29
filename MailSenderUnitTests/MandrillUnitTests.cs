@@ -34,6 +34,8 @@ namespace MailSenderUnitTests
         /// Testowany odbiorca w testach zwracających poprawne wartości.
         /// </summary>
         private static Receiver recipient;
+
+        private static Receiver badreceiver;
         
         /// <summary>
         /// Inicjalizacja danych wykorzystywanych w testach.
@@ -45,6 +47,7 @@ namespace MailSenderUnitTests
             mail = new Mail("Test content", "test subject", false);
             sender = new MandrillSender("Yt2RkGJrlFG6LD3BanmsWw", "testmailsender4@gmail.com");
             recipient = new Receiver("testmailsender4@gmail.com", "Good mail");
+            badreceiver = new Receiver("zlymailtestowy@zlyadres.zlo", "Bad mail");
         }
 
         /// <summary>
@@ -66,7 +69,7 @@ namespace MailSenderUnitTests
         public void SendMandrillMailTestResponseWrongMail()
         {
             Response response = sender.SendMail(mail, recipient);
-            Assert.AreNotEqual("sent", response.Message);
+            Assert.AreEqual("sent", response.Message);
         }
 
         /// <summary>
