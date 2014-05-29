@@ -59,7 +59,7 @@ namespace MailChimpMailSender
             this.apiKey = apikey.Substring(0, apikey.Length - 4);
             this.fromMail = frommail;
             string datacenter = apikey.Substring(apikey.Length - 3, 3);
-            this.apiUrl = "https://"+datacenter+".api.mailchimp.com/2.0";
+            this.apiUrl = "https://" + datacenter + ".api.mailchimp.com/2.0";
             this.connector = new HttpIO(this.apiUrl, this.contentType);
             this.requestSerializer = new JsonSerializer<MailChimpRequest>();
             this.responseDeserializer = new JsonDeserializer<MailChimpResponse>();
@@ -185,7 +185,8 @@ namespace MailChimpMailSender
         /// <param name="title"></param>
         /// <param name="fromName"></param>
         /// <returns></returns>
-        public Response CreateCampaign(string listId, string subject, string toName, string title, string fromName){
+        public Response CreateCampaign(string listId, string subject, string toName, string title, string fromName)
+        {
             return this.CreateCampaign(listId, subject, toName, title, fromName, this.fromMail);
         }
 
@@ -197,7 +198,8 @@ namespace MailChimpMailSender
         /// <param name="toName"></param>
         /// <param name="title"></param>
         /// <returns></returns>
-        public Response CreateCampaign(string listId, string subject, string toName, string title){
+        public Response CreateCampaign(string listId, string subject, string toName, string title)
+        {
             return this.CreateCampaign(listId, subject, toName, title, this.fromMail.Substring(0, this.fromMail.IndexOf('@')));
         }
 
