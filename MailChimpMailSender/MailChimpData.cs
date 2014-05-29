@@ -1,5 +1,5 @@
 ﻿// -----------------------------------------------------------------------
-//  <copyright file="MailChimpRequest.cs" company="DevCore.NET">
+//  <copyright file="MailChimpData.cs" company="DevCore.NET">
 //      Author: Milena Farfułowska (m.farfulowskai@gmail.com).
 //  </copyright>
 // -----------------------------------------------------------------------
@@ -36,7 +36,5 @@ namespace MailChimpMailSender
 
         [DataMember(Name = "date_created", EmitDefaultValue = false)]
         public string Datecreated { get; set; }
-
     }
 }
-

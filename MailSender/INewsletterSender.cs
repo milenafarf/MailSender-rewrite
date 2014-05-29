@@ -4,7 +4,6 @@
 //  </copyright>
 // -----------------------------------------------------------------------
 
-
 namespace MailSender
 {
     using System.Collections.Generic;

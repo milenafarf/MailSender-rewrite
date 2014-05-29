@@ -9,9 +9,9 @@ namespace MailSender
     public class Receiver
     {
         /// <summary>
-        /// nicjalizuje nową instancję klasy <see cref="MailSender.Receiver"/>.
+        /// Inicjalizuje nową instancję klasy <see cref="MailSender.Receiver"/>.
         /// </summary>
-        /// <param name="email">Email.</param>
+        /// <param name="email">Adres email odbiorcy.</param>
         /// <param name="name">Nazwa odbiorcy.</param>
         public Receiver(string email, string name)
         {

@@ -1,5 +1,5 @@
 ﻿// -----------------------------------------------------------------------
-//  <copyright file="UnitTestsMandrill.cs" company="DevCore.NET">
+//  <copyright file="MandrillUnitTests.cs" company="DevCore.NET">
 //      Author: m (chrystian.kislo@gmail.com).
 //  </copyright>
 // -----------------------------------------------------------------------

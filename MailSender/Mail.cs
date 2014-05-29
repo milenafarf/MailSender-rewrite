@@ -28,7 +28,9 @@ namespace MailSender
         }
 
         public string Content { get; set; }
+
         public string Subject { get; set; }
+
         public bool Html { get; set; }
     }
 }

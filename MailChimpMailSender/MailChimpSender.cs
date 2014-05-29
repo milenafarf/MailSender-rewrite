@@ -56,13 +56,11 @@ namespace MailChimpMailSender
         /// albo na końcu apikey'a. Przykładowe datacentr to "us1","uk1"</param>
         public MailChimpSender(string apikey, string frommail)
         {
-            this.apiKey = apikey.Substring(0,apikey.Length-4);
+            this.apiKey = apikey.Substring(0, apikey.Length - 4);
             this.fromMail = frommail;
-            
-            string datacenter = apikey.Substring(apikey.Length-3,3);
+            string datacenter = apikey.Substring(apikey.Length - 3, 3);
             this.apiUrl = "https://"+datacenter+".api.mailchimp.com/2.0";
-            
-            this.connector = new HttpIO(apiUrl, contentType);
+            this.connector = new HttpIO(this.apiUrl, this.contentType);
             this.requestSerializer = new JsonSerializer<MailChimpRequest>();
             this.responseDeserializer = new JsonDeserializer<MailChimpResponse>();
         }
@@ -121,7 +119,7 @@ namespace MailChimpMailSender
             {
                 return new Response(Response.ResponseCode.UnknownError);
             }
-            return AddSubscriberTolistById(listId, receiver);
+            return this.AddSubscriberTolistById(listId, receiver);
         }
 
         public Response GetSubscribersList(string name)
@@ -139,7 +137,7 @@ namespace MailChimpMailSender
         /// Metoda pomocnicza zwracająca id listy subskrybentów ze względu na name. 
         /// </summary>
         /// <param name="name"></param>
-        /// <returns></returns>
+        /// <returns>Odpowiedź otrzymana od serwera.</returns>
         public string getSubscriberIdListByName(string name)
         {
             Response response;
@@ -236,7 +234,7 @@ namespace MailChimpMailSender
         /// 
         /// </summary>
         /// <param name="campaignName"></param>
-        /// <returns></returns>
+        /// <returns>Odpowiedź otrzymana od serwera.</returns>
         public Response ResumeCampaign(string campaignName)
         {
             var r = new MailChimpRequest();
@@ -245,7 +243,8 @@ namespace MailChimpMailSender
             MailChimpResponse response = this.SendRequest(r, "/campaigns/resume.json");
             
             return response.Complete != null ? (response.Complete == "True" ?
-                new Response(Response.ResponseCode.Ok) : new Response(Response.ResponseCode.UnknownError)):
+                new Response(Response.ResponseCode.Ok) : 
+                new Response(Response.ResponseCode.UnknownError)) : 
                 new Response(Response.ResponseCode.UnknownError, response.Error);
         }
 

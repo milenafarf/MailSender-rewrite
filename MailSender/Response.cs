@@ -12,12 +12,17 @@ namespace MailSender
     /// Klasa przechowująca odpowiedź otrzymaną od serwera.
     /// </summary>
     public class Response
-    {   
-        public Response(ResponseCode code, ResponseSubCode subCode, string message)
+    {
+        public enum ResponseCode
         {
-            this.Code = code;
-            this.SubCode = subCode;
-            this.Message = message;
+            Ok,
+            UnknownError,
+            WrongApiKey
+        }
+
+        public enum ResponseSubCode
+        {
+            None
         }
 
         public Response(ResponseCode code, string message)
@@ -34,23 +39,18 @@ namespace MailSender
             : this(code, subCode, string.Empty)
         {
         }
+        
+        public ResponseCode Code { get; set; }
 
-        public ResponseCode Code;
+        public ResponseSubCode SubCode { get; set; }
 
-        public ResponseSubCode SubCode;
+        public string Message { get; set; }
 
-        public string Message;
-
-        public enum ResponseCode
+        public Response(ResponseCode code, ResponseSubCode subCode, string message)
         {
-            Ok,
-            UnknownError,
-            WrongApiKey
-        }
-
-        public enum ResponseSubCode
-        {
-            None
+            this.Code = code;
+            this.SubCode = subCode;
+            this.Message = message;
         }
     }
 }

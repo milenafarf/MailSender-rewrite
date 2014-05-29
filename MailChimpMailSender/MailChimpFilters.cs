@@ -17,7 +17,7 @@ namespace MailChimpMailSender
     [DataContract]
     public class MailChimpFilters
     {
-        public MailChimpFilters ()
+        public MailChimpFilters()
         {
         }
 
@@ -49,7 +49,5 @@ namespace MailChimpMailSender
         [DataMember(Name = "created_after", EmitDefaultValue = false)]
         public string CreatedAfter { get; set; }
 
-
     }
 }
-

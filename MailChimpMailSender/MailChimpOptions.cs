@@ -1,5 +1,5 @@
 // -----------------------------------------------------------------------
-//  <copyright file="MailChimpRequest.cs" company="DevCore.NET">
+//  <copyright file="MailChimpOptions.cs" company="DevCore.NET">
 //      Author: Milena Farfułowska (m.farfulowskai@gmail.com).
 //  </copyright>
 // -----------------------------------------------------------------------
@@ -41,7 +41,7 @@ namespace MailChimpMailSender
         public string ToName { get; set; }
 
         /// <summary>
-        /// Tytuł kampanii. W razie niepodania kampania przyjmuje nazwę tematu.
+        /// Pobiera lub ustawia tytuł kampanii. W razie niepodania kampania przyjmuje nazwę tematu.
         /// </summary>
         [DataMember(Name = "title", EmitDefaultValue = false)]
         public string Title { get; set; }

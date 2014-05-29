@@ -1,5 +1,5 @@
 ﻿// -----------------------------------------------------------------------
-//  <copyright file="MailChimpRequest.cs" company="DevCore.NET">
+//  <copyright file="MailChimpEmail.cs" company="DevCore.NET">
 //      Author: Milena Farfułowska (m.farfulowskai@gmail.com).
 //  </copyright>
 // -----------------------------------------------------------------------
@@ -38,8 +38,5 @@ namespace MailChimpMailSender
         /// <value>Unikalny identyfikator lista-email, nie zmienia się, gdy adres email się zmieni.</value>
         [DataMember(Name = "leid", EmitDefaultValue = false)]
         public string Leid { get; set; }
-
-
     }
 }
-
