@@ -30,9 +30,15 @@ namespace MailChimpMailSender
         [DataMember(Name = "subject", EmitDefaultValue = false)]
         public string Subject { get; set; }
 
+        /// <summary>
+        /// Pobiera lub ustawia adres email przekazywny jako wysyłający wiadomości email.
+        /// </summary>
         [DataMember(Name = "from_email", EmitDefaultValue = false)]
         public string FromEmail { get; set; }
 
+        /// <summary>
+        /// Pobiera lub ustawia nazwe nadawcy wiadomości.
+        /// </summary>
         [DataMember(Name = "from_name", EmitDefaultValue = false)]
         public string FromName { get; set; }
 

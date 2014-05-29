@@ -17,10 +17,6 @@ namespace MailChimpMailSender
     [DataContract]
     public class MailChimpEmail
     {
-        public MailChimpEmail()
-        {
-        }
-
         /// <summary>
         /// Pobiera lub ustawia adres email subskrybenta.
         /// </summary>

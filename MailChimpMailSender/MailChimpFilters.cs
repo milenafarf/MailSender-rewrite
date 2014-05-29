@@ -17,10 +17,6 @@ namespace MailChimpMailSender
     [DataContract]
     public class MailChimpFilters
     {
-        public MailChimpFilters()
-        {
-        }
-
         /// <summary>
         /// Pobiera lub ustawia id listy odbiorców kampanii
         /// </summary>
