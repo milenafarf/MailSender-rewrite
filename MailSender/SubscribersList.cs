@@ -13,8 +13,12 @@ namespace MailSender
 
     public class SubscribersList
     {
-        public SubscribersList() { }
+        public SubscribersList()
+        {
+        }
+
         public string Id { get; set; }
+
         public string Name { get; set; }
     }
 }

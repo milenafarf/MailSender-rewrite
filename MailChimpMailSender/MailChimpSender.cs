@@ -79,23 +79,6 @@ namespace MailChimpMailSender
                 new Response(Response.ResponseCode.UnknownError);
         }
 
-        /// <summary>
-        /// Wysyła zapytanie typu MailChimp
-        /// Request do serwera, zwracając jego odpowiedź
-        /// w formie MailChimpResponse
-        /// </summary>
-        /// <returns>Odpowiedź otrzymana od serwera</returns>
-        /// <param name="requestContent">Zapytanie w formacie MailChimpRequest</param>
-        /// <param name="url">Adres url </param>
-        private MailChimpResponse SendRequest(MailChimpRequest requestContent, string url)
-        {
-            MailChimpResponse response;
-            var requestJson = this.requestSerializer.Serialize(requestContent);
-            var responseJson = this.connector.ProcessRequest(url, requestJson);
-            response = this.responseDeserializer.Deserialize(responseJson);
-            return response;
-        }
-
         public List<SubscribersList> GetAllLists()
         {
             var r = new MailChimpRequest();
@@ -109,6 +92,7 @@ namespace MailChimpMailSender
                 sl.Name = data.Name;
                 lists.Add(sl);
             }
+
             return lists;
         }
 
@@ -266,6 +250,23 @@ namespace MailChimpMailSender
                 new Response(Response.ResponseCode.Ok) :
                 new Response(Response.ResponseCode.UnknownError)) :
                 new Response(Response.ResponseCode.UnknownError, response.Error);
+        }
+
+        /// <summary>
+        /// Wysyła zapytanie typu MailChimp
+        /// Request do serwera, zwracając jego odpowiedź
+        /// w formie MailChimpResponse
+        /// </summary>
+        /// <returns>Odpowiedź otrzymana od serwera</returns>
+        /// <param name="requestContent">Zapytanie w formacie MailChimpRequest</param>
+        /// <param name="url">Adres url </param>
+        private MailChimpResponse SendRequest(MailChimpRequest requestContent, string url)
+        {
+            MailChimpResponse response;
+            var requestJson = this.requestSerializer.Serialize(requestContent);
+            var responseJson = this.connector.ProcessRequest(url, requestJson);
+            response = this.responseDeserializer.Deserialize(responseJson);
+            return response;
         }
     }
 }

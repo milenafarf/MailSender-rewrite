@@ -6,10 +6,10 @@
 
 namespace TestApp
 {
+    using System.Collections.Generic;
+    using MailChimpMailSender;
     using MailSender;
     using MandrillMailSender;
-    using MailChimpMailSender;
-    using System.Collections.Generic;
 
     /// <summary>
     /// Klasa programu testującego działanie klas MandrillMailSender
