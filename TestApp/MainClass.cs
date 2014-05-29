@@ -25,7 +25,6 @@ namespace TestApp
         {
             ITransactionalSender mandrill = new MandrillSender("", "");
             mandrill.TestSender();
-
             INewsletterSender mailchimp = new MailChimpSender("", "frommail@from.mail");
             List<SubscribersList> lists = mailchimp.GetAllLists();
             mailchimp.TestSender();
