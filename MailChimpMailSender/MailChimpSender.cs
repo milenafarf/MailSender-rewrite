@@ -1,6 +1,8 @@
 //-----------------------------------------------------------------------
 // <copyright file="MailChimpSender.cs" company="DevCore.NET">
-//     Author: m (m.dobrzynski@outlook.com), Milena Farfułowska, Chrystian Kisło
+//     Author: m (m.dobrzynski@outlook.com),
+//             Milena Farfułowska (m.farfulowskai@gmail.com),
+//             Chrystian Kisło ()
 // </copyright>
 //-----------------------------------------------------------------------
 
@@ -22,11 +24,6 @@ namespace MailChimpMailSender
         private readonly HttpIO connector;
         private readonly JsonSerializer<MailChimpRequest> requestSerializer;
         private readonly JsonDeserializer<MailChimpResponse> responseDeserializer;
-
-        // url chyba trzeba samemu ustawić, a nie dać jakiś stały, ponieważ tutaj jest napisane http://apidocs.mailchimp.com/api/2.0/
-        // że link wygląda tak https://<dc>.api.mailchimp.com/2.0/ gdzie <dc> to np. uk1 albo jak u mnie us8.
-        // Można zrobić tak, że te dc jest wstawiane na podstawie apikeya
-        // private readonly string apiUrl = "https://uk1.api.mailchimp.com/2.0";
 
         /// <summary>
         /// Link za pośrednictwem, którego będą wysyłąne zapytania do serwera. Zawiera datacenter i wersję api.
