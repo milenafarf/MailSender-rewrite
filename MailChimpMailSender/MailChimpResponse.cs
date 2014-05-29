@@ -76,7 +76,7 @@ namespace MailChimpMailSender
         public List<MailChimpData> Data { get; set; }
 
         /// <summary>
-        /// Powiadamia czy zostało wykonane zadanie związane z zatrzymaniem, bądź ponownym wystartowaniem kampanii.
+        /// Pobiera lub ustawia powiadamia czy zostało wykonane zadanie związane z zatrzymaniem, bądź ponownym wystartowaniem kampanii.
         /// </summary>
         [DataMember(Name = "complete")]
         public string Complete { get; set; }
