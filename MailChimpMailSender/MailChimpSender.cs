@@ -98,6 +98,22 @@ namespace MailChimpMailSender
             return response;
         }
 
+        public List<SubscribersList> GetAllLists()
+        {            
+            var r = new MailChimpRequest();
+            r.ApiKey = this.apiKey;
+            MailChimpResponse response = this.SendRequest(r, "/lists/list.json");
+            List<SubscribersList> lists = new List<SubscribersList>();
+            foreach (var data in response.Data)
+            {
+                SubscribersList sl = new SubscribersList();
+                sl.Id = data.Id;
+                sl.Name = data.Name;
+                lists.Add(sl);
+            }            
+            return lists;
+        }
+
         public Response AddSubscriberTolistById(string listId, Receiver receiver)
         {
             var r = new MailChimpRequest();
@@ -131,7 +147,7 @@ namespace MailChimpMailSender
             r.Filters = new MailChimpFilters();
             r.Filters.ListName = name;
             MailChimpResponse response = this.SendRequest(r, "/lists/list.json");
-            return response.Error == null ? new Response(Response.ResponseCode.Ok, response.Data[0].Email) :
+            return response.Error == null ? new Response(Response.ResponseCode.Ok, response.Data[0].Id) :
                 new Response(Response.ResponseCode.UnknownError);
         }
 

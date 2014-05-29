@@ -15,6 +15,8 @@ namespace MailSender
 
         Response GetSubscribersList(string name);
 
+        List<SubscribersList> GetAllLists();
+
         Response AddSubscriberTolistByName(string listName, Receiver receiver);
 
         Response AddSubscriberTolistById(string listId, Receiver receiver);
