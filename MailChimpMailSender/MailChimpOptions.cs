@@ -24,6 +24,9 @@ namespace MailChimpMailSender
         [DataMember(Name = "list_id", EmitDefaultValue = false)]
         public string ListId { get; set; }
 
+        /// <summary>
+        /// Pobiera lub ustawia temat kampanii
+        /// </summary>
         [DataMember(Name = "subject", EmitDefaultValue = false)]
         public string Subject { get; set; }
 

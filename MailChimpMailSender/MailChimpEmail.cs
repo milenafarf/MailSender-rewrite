@@ -11,6 +11,9 @@ namespace MailChimpMailSender
     using System.Runtime.Serialization;
     using MailSender;
 
+    /// <summary>
+    /// Informacje o adresie email subskrybenta
+    /// </summary>
     [DataContract]
     public class MailChimpEmail
     {
