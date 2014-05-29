@@ -8,6 +8,8 @@ namespace TestApp
 {
     using MailSender;
     using MandrillMailSender;
+    using MailChimpMailSender;
+    using System.Collections.Generic;
 
     /// <summary>
     /// Klasa programu testującego działanie klas MandrillMailSender
@@ -21,8 +23,12 @@ namespace TestApp
         /// <param name="args">Parametry przekazane do programu.</param>
         public static void Main(string[] args)
         {
-            ITransactionalSender mandrill = new MandrillSender(string.Empty, string.Empty);
+            ITransactionalSender mandrill = new MandrillSender("", "");
             mandrill.TestSender();
+
+            INewsletterSender mailchimp = new MailChimpSender("", "frommail@from.mail");
+            List<SubscribersList> lists = mailchimp.GetAllLists();
+            mailchimp.TestSender();
         }
     }
 }

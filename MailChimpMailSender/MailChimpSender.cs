@@ -79,6 +79,39 @@ namespace MailChimpMailSender
                 new Response(Response.ResponseCode.UnknownError);
         }
 
+        /// <summary>
+        /// Wysyła zapytanie typu MailChimp
+        /// Request do serwera, zwracając jego odpowiedź
+        /// w formie MailChimpResponse
+        /// </summary>
+        /// <returns>Odpowiedź otrzymana od serwera</returns>
+        /// <param name="requestContent">Zapytanie w formacie MailChimpRequest</param>
+        /// <param name="url">Adres url </param>
+        private MailChimpResponse SendRequest(MailChimpRequest requestContent, string url)
+        {
+            MailChimpResponse response;
+            var requestJson = this.requestSerializer.Serialize(requestContent);
+            var responseJson = this.connector.ProcessRequest(url, requestJson);
+            response = this.responseDeserializer.Deserialize(responseJson);
+            return response;
+        }
+
+        public List<SubscribersList> GetAllLists()
+        {            
+            var r = new MailChimpRequest();
+            r.ApiKey = this.apiKey;
+            MailChimpResponse response = this.SendRequest(r, "/lists/list.json");
+            List<SubscribersList> lists = new List<SubscribersList>();
+            foreach (var data in response.Data)
+            {
+                SubscribersList sl = new SubscribersList();
+                sl.Id = data.Id;
+                sl.Name = data.Name;
+                lists.Add(sl);
+            }            
+            return lists;
+        }
+
         public Response AddSubscriberTolistById(string listId, Receiver receiver)
         {
             var r = new MailChimpRequest();
@@ -234,22 +267,4 @@ namespace MailChimpMailSender
                 new Response(Response.ResponseCode.UnknownError)) : 
                 new Response(Response.ResponseCode.UnknownError, response.Error);
         }
-
-        /// <summary>
-        /// Wysyła zapytanie typu MailChimp
-        /// Request do serwera, zwracając jego odpowiedź
-        /// w formie MailChimpResponse
-        /// </summary>
-        /// <returns>Odpowiedź otrzymana od serwera</returns>
-        /// <param name="requestContent">Zapytanie w formacie MailChimpRequest</param>
-        /// <param name="url">Adres url </param>
-        private MailChimpResponse SendRequest(MailChimpRequest requestContent, string url)
-        {
-            MailChimpResponse response;
-            var requestJson = this.requestSerializer.Serialize(requestContent);
-            var responseJson = this.connector.ProcessRequest(url, requestJson);
-            response = this.responseDeserializer.Deserialize(responseJson);
-            return response;
-        }
-    }
 }

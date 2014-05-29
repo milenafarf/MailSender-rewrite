@@ -37,6 +37,7 @@
     <Compile Include="Response.cs" />
     <Compile Include="Receiver.cs" />
     <Compile Include="ITransactionalSender.cs" />
+    <Compile Include="SubscribersList.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
