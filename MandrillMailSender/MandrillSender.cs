@@ -84,11 +84,12 @@ namespace MandrillMailSender
             var rec = new MandrillTo(receiver);
             r.Message.To.Add(rec);
             MandrillResponse response = this.SendRequestHack(r, "/messages/send.json");
-            if(response.Responses[0].Status == "sent")
+            if (response.Responses[0].Status == "sent")
             {
                 return new Response(Response.ResponseCode.Ok, "sent");
             }
-            return new Response(Response.ResponseCode.UnknownError);
+
+            return new Response(Response.ResponseCode.UnknownError, response.Responses[0].Status);
         }
 
         /// <summary>
