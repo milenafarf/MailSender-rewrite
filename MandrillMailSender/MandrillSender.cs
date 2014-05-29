@@ -112,7 +112,14 @@ namespace MandrillMailSender
             }
 
             MandrillResponse response = this.SendRequest(r, "/messages/send.json");
-            return new Response(Response.ResponseCode.UnknownError);
+            foreach(var a in response.Responses)
+            {
+                if(a.Status != "sent")
+                {
+                    return new Response(Response.ResponseCode.UnknownError, a.Status);
+                }
+            }
+            return new Response(Response.ResponseCode.Ok, "sent");
         }
 
         /// <summary>
@@ -133,7 +140,10 @@ namespace MandrillMailSender
 
         /// <summary>
         /// Wysyła zapytanie typu MandrillRequest do serwera, zwracając jego odpowiedź
-        /// w formie MandrillResponse
+        /// w formie MandrillResponse.
+        /// Metoda ta jest używana w przypadku zwracania przez serwer listy jako elemntu root JSONA.
+        /// Parser nie potrafi sparsować takiego obiektu, dlatego przypisujemy wartość listu do dodatkowego obiektu
+        /// "hack" który możemy odczytać.
         /// </summary>
         /// <returns>Odpowiedź otrzymana od serwera</returns>
         /// <param name="requestContent">Zapytanie w formacie MandrillRequest</param>
