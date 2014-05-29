@@ -105,7 +105,7 @@ namespace MailSenderUnitTests
         [TestMethod]
         public void TestMailChimpCreateCampaign_ReturnOk()
         {
-            Response r = sender.CreateCampaign(sender.getSubscriberIdListByName(listName), campaignSubject,campaignSubscribers);
+            Response r = sender.CreateCampaign(sender.GetSubscriberIdListByName(listName), campaignSubject, campaignSubscribers);
             Assert.IsTrue(r.Code == Response.ResponseCode.Ok);
         }
     }

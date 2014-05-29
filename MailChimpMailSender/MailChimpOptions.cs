@@ -46,5 +46,4 @@ namespace MailChimpMailSender
         [DataMember(Name = "title", EmitDefaultValue = false)]
         public string Title { get; set; }
     }
-    
 }

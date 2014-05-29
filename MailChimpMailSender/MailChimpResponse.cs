@@ -1,5 +1,5 @@
 ﻿// -----------------------------------------------------------------------
-//  <copyright file="MailChimpRequest.cs" company="DevCore.NET">
+//  <copyright file="MailChimpResponse.cs" company="DevCore.NET">
 //      Author: Milena Farfułowska (m.farfulowskai@gmail.com).
 //  </copyright>
 // -----------------------------------------------------------------------
@@ -7,8 +7,8 @@
 namespace MailChimpMailSender
 {
     using System;
-    using System.Runtime.Serialization;
     using System.Collections.Generic;
+    using System.Runtime.Serialization;
 
     [DataContract]
     public class MailChimpResponse

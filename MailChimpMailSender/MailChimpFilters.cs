@@ -1,5 +1,5 @@
 ﻿// -----------------------------------------------------------------------
-//  <copyright file="MailChimpRequest.cs" company="DevCore.NET">
+//  <copyright file="MailChimpFilters.cs" company="DevCore.NET">
 //      Author: Milena Farfułowska (m.farfulowskai@gmail.com).
 //  </copyright>
 // -----------------------------------------------------------------------
@@ -48,6 +48,5 @@ namespace MailChimpMailSender
         /// <value>Filtr zwróci listę list subskrybentów utworzonych po wskazanej dacie, format daty 24-godzinny, np. "2013-12-30 20:30:00".</value>
         [DataMember(Name = "created_after", EmitDefaultValue = false)]
         public string CreatedAfter { get; set; }
-
     }
 }

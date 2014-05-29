@@ -14,7 +14,7 @@ namespace MailChimpMailSender
     [DataContract]
     public class MailChimpEmail
     {
-        public MailChimpEmail ()
+        public MailChimpEmail()
         {
         }
 
@@ -25,14 +25,14 @@ namespace MailChimpMailSender
         [DataMember(Name = "email", EmitDefaultValue = false)]
         public string Email { get; set; }
 
-        // <summary>
+        /// <summary>
         /// Pobiera lub ustawia id subskrybenta.
         /// </summary>
         /// <value>Unikalny identyfikator adresu email subskrybenta (nie związany z listą subskrybentów).</value>
         [DataMember(Name = "euid", EmitDefaultValue = false)]
         public string Euid { get; set; }
 
-        // <summary>
+        /// <summary>
         /// Pobiera lub ustawia id lista-email.
         /// </summary>
         /// <value>Unikalny identyfikator lista-email, nie zmienia się, gdy adres email się zmieni.</value>

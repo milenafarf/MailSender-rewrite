@@ -48,5 +48,4 @@ namespace MandrillMailSender
         [DataMember(Name = "to", EmitDefaultValue = false)]
         public List<MandrillTo> To { get; set; }
     }
-
 }
